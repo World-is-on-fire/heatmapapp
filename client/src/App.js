@@ -1,14 +1,11 @@
 import React from 'react';
+const MapContainer = require('./MapContainer');
 
 function App() {
   return (
     <div className='App'>
-        <h1>Welcome to
-          <br/>Fullstack Webpack!</h1>
-        <div className='description'>
-          <h4>Visit us at</h4>
-          <h3>https://github.com/Create-Fullstack-Webpack/create-fullstack-webpack-app</h3>
-        </div>
+      <h1>hello world</h1>
+      <MapContainer />
     </div>
   );
 }
