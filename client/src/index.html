@@ -19,25 +19,45 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #mapPast {
+                #past{
                     position: relative;
                     width: 50.0%;
                     float: left;
                     height: 90.0%
                 }
-                #mapPresent {
+
+                #mapPast {
+                    height: 100.0%
+                }
+
+                #present{
                     position: relative;
                     width: 50.0%;
                     float: right;
                     height: 90.0%
                 }
+
+                #mapPresent {
+                    height: 100.0%
+                }
             </style>
         
 </head>
 <body>    
-        
-            <div class="folium-map" id="mapPast" ></div>
-            <div class="folium-map" id="mapPresent" ></div>
+            <div id="past">
+                <div class="folium-map" id="mapPast" ></div>
+                    <div class="input-group">
+                        <textarea id="startDate" class="form-control custom-control" rows="2"></textarea>     
+                        <span id="startSearch" class="input-group-addon btn btn-primary">Search</span>
+                </div>
+            </div>
+            <div id="present">
+                <div class="folium-map" id="mapPresent"></div>
+                <div class="input-group">
+                    <textarea id="endDate" class="form-control custom-control" rows="2"></textarea>     
+                    <span id="endSearch" class="input-group-addon btn btn-primary">Search</span>
+                </div>
+            </div>
         
 </body>
 <script>   

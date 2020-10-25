@@ -1,4 +1,27 @@
-window.onload = init()
+window.onload = init();
+
+document.getElementById("startSearch").addEventListener("click", fetchTempDataForStartDate);
+
+document.getElementById("endSearch").addEventListener("click", fetchTempDataForEndDate);
+
+function fetchTempDataForStartDate(){
+    //fetch date
+    const date = document.getElementById("startDate").value;
+
+    fetch(`/temp/${date}`)
+    .then(response => response.json())
+    .then(data => console.log(data.data));
+}
+
+function fetchTempDataForEndDate(){
+    //fetch date
+    const date = document.getElementById("endDate").value;
+
+    fetch(`/temp/${date}`)
+    .then(response => response.json())
+    .then(data => console.log(data.data));
+}
+
 
 function init(){
     var mapPast = L.map(
