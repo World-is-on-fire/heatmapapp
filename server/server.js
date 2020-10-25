@@ -8,14 +8,13 @@ const path = require('path');
 app.use(express.json());
 
 // Webpack DevServer
-if (process.env.NODE_ENV === 'production') {
-  // statically serve everything in the dist folder on the route
-  app.use('/dist', express.static(path.resolve(process.cwd(), './dist')));
-  // serve index.html on the route '/'
-  app.get('/', (req, res) => {
-    res.status(200).sendFile(path.resolve(process.cwd(), './client/src/index.html'));
-  });
-}
+
+// statically serve everything in the dist folder on the route
+app.use('/dist', express.static(path.resolve(process.cwd(), './dist')));
+// serve index.html on the route '/'
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.resolve(process.cwd(), './client/src/index.html'));
+});
 
 // catch-all endpoint handler
 app.use((req, res) => {
