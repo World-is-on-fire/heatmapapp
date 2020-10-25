@@ -58,43 +58,19 @@ function init(){
         {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
     ).addTo(mapPresent);
 
-    
-    var data = [
-        {"longitude": 5.63, "latitude": -3.23, "temp": "8"},
-        {"longitude": 8.84, "latitude": 38.11, "temp": "9"}
-    ];
+    fetch(`/temp/1900`)
+    .then(response => response.json())
+    .then(data => updateMap(mapPast, data.data));
 
-    //(data + 40)/10 + 1
-
-    //1: coldest, 6: hottest
-    var colorMap = {
-        "1": "#f7f7f7",
-        "2": "#d1e5f0",
-        "3": "#92c5de",
-        "4": "#4393c3",
-        "5": "#fddbc7",
-        "6": "#f4a582",
-        "7": "#d6604d",
-        "8": "#b2182b",
-        "9": "#2166ac"
-    }
-
-    for (const point of data){
-        L.circleMarker(
-                [point["longitude"], point["latitude"]],
-                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
-          ).addTo(mapPast);
-    }
-
-    for (const point of data){
-        L.circleMarker(
-                [point["longitude"], point["latitude"]],
-                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
-          ).addTo(mapPresent);
-    }
+    fetch(`/temp/2006`)
+    .then(response => response.json())
+    .then(data => updateMap(mapPresent, data.data));
 }
 
 function updateMap(map, data){
+
+    var cleanedData = dataConversion(data);
+
     //1: coldest, 6: hottest
     var colorMap = {
         "1": "#f7f7f7",
@@ -114,4 +90,13 @@ function updateMap(map, data){
                 {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
           ).addTo(map);
     }
+}
+
+[
+    {"year": "2010", "longitude": "5.63N", "latitude": "3.23W", "temp": "35"},
+    {"year": "2011", "longitude": "8.84N", "latitude": "38.11E", "temp": "36"}
+]; 
+
+function dataConversion(data){
+    
 }
