@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Julius+Sans+One&family=Baloo+Tamma+2&family=Poiret+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Julius+Sans+One&family=Baloo+Tamma+2&family=Poiret+One&display=swap");
 
 body {
-  font-family: 'Baloo Tamma 2';
+  background-color: #b8ecf3;
+  font-family: "Baloo Tamma 2";
   margin: 0;
   padding: 0;
   background: #f1f1f1b9;
@@ -22,7 +23,7 @@ body {
 .App h1 {
   margin: auto;
   margin: 100 0 100 0;
-  font-family: 'Alegreya Sans SC';
+  font-family: "Alegreya Sans SC";
   letter-spacing: 6px;
   font-size: 60px;
   color: rgb(66, 66, 66);

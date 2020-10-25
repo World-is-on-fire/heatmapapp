@@ -1,27 +1,16 @@
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
-​
-const MapContainer = () => {
-  
-  const mapStyles = {        
-    height: "100vh",
-    width: "100%"
-  };
-  
-  const defaultCenter = {
-    lat: 41.3851, lng: 2.1734
-  }
-  
+
+const CityContainer = () => {
   return (
-     <LoadScript
-       googleMapsApiKey='AIzaSyDLqamydvf1Tqr7hKBTAkE-PVAog-fqXLQ'>
-        <GoogleMap
-          mapContainerStyle={mapStyles}
-          zoom={13}
-          center={defaultCenter}
-        />
-     </LoadScript>
-  )
-}
-​
-export default MapContainer;
+    //eventually replace the degrees, years with variables that we get from a loop
+    <div className="city">
+      <div className="name">NYC</div>
+      <div className="temp">Current Average: 78 degrees</div>
+      <div className="temp">Average for 1990 is 65 degrees</div>
+      <div className="note">The average temperature has changed by 13 degrees</div>
+    </div>
+    //add drop downs/interaction here to select the city/year comparisinon
+  );
+};
+
+export default CityContainer;
