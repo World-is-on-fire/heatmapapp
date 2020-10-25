@@ -4,13 +4,15 @@ document.getElementById("startSearch").addEventListener("click", fetchTempDataFo
 
 document.getElementById("endSearch").addEventListener("click", fetchTempDataForEndDate);
 
+let mapPast, mapPresent;
+
 function fetchTempDataForStartDate(){
     //fetch date
     const date = document.getElementById("startDate").value;
 
     fetch(`/temp/${date}`)
     .then(response => response.json())
-    .then(data => console.log(data.data));
+    .then(data => updateMap(mapPast, data.data));
 }
 
 function fetchTempDataForEndDate(){
@@ -19,12 +21,12 @@ function fetchTempDataForEndDate(){
 
     fetch(`/temp/${date}`)
     .then(response => response.json())
-    .then(data => console.log(data.data));
+    .then(data => updateMap(mapPresent, data.data));
 }
 
 
 function init(){
-    var mapPast = L.map(
+    mapPast = L.map(
         "mapPast",
         {
             center: [31.771421, -40.485469],
@@ -35,7 +37,7 @@ function init(){
         }
     );
 
-    var mapPresent = L.map(
+    mapPresent = L.map(
         "mapPresent",
         {
             center: [31.771421, -40.485469],
@@ -89,5 +91,27 @@ function init(){
                 [point["longitude"], point["latitude"]],
                 {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
           ).addTo(mapPresent);
+    }
+}
+
+function updateMap(map, data){
+    //1: coldest, 6: hottest
+    var colorMap = {
+        "1": "#f7f7f7",
+        "2": "#d1e5f0",
+        "3": "#92c5de",
+        "4": "#4393c3",
+        "5": "#fddbc7",
+        "6": "#f4a582",
+        "7": "#d6604d",
+        "8": "#b2182b",
+        "9": "#2166ac"
+    }
+
+    for (const point of data){
+        L.circleMarker(
+                [point["longitude"], point["latitude"]],
+                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
+          ).addTo(map);
     }
 }
