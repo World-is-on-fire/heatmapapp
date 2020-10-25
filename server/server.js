@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const path = require('path');
+const {tempController} = require('./controller');
 
 // JSON parser:
 app.use(express.json());
@@ -11,6 +12,9 @@ app.use(express.json());
 
 // statically serve everything in the dist folder on the route
 app.use('/dist', express.static(path.resolve(process.cwd(), './dist')));
+
+app.get('/temp/:year', tempController);
+
 // serve index.html on the route '/'
 app.get('/', (req, res) => {
   res.status(200).sendFile(path.resolve(process.cwd(), './client/src/index.html'));
