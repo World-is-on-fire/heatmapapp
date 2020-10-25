@@ -1,13 +1,11 @@
-import React from 'react';
-const MapContainer = require('./MapContainer');
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className='App'>
-      <h1>hello world</h1>
-      <MapContainer />
-    </div>
-  );
+const App = () => {
+
+  //all components required into this file can be rendered here in parent app
+  return (<div>
+   <h1> future data here</h1>
+  </div>)
 }
 
 export default App;
