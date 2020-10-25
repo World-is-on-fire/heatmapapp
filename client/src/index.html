@@ -7,10 +7,6 @@
             L_DISABLE_3D = false;
         </script>
     
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
@@ -40,1645 +36,1670 @@
 </body>
 <script>    
     
-            var map_ae20d233dbb4489e9ffd45e1e9a00b94 = L.map(
-                "map_ae20d233dbb4489e9ffd45e1e9a00b94",
-                {
-                    center: [31.771421, -40.485469],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 2,
-                    zoomControl: true,
-                    preferCanvas: true,
-                }
-            );
+            // var map_ae20d233dbb4489e9ffd45e1e9a00b94 = L.map(
+            //     "map_ae20d233dbb4489e9ffd45e1e9a00b94",
+            //     {
+            //         center: [31.771421, -40.485469],
+            //         crs: L.CRS.EPSG3857,
+            //         zoom: 2,
+            //         zoomControl: true,
+            //         preferCanvas: true,
+            //     }
+            // );
 
             
-
+            // var data= {
+            //             "type": "Feature",
+            //             "geometry": {
+            //                 "type": "Point",
+            //                 "coordinates": [125.6, 10.1]
+            //             },
+            //             "properties": {
+            //                 "temperature": "Hot"
+            //             }
+            //         }
         
     
-            var tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+            // var tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
+            //     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            //     {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            // ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-            var tile_layer_e3bf97b2e6ab4815bf9958cd1f230876 = L.tileLayer(
-                "https://{s}.tiles.mapbox.com/v3/mapbox.world-bright/{z}/{x}/{y}.png",
-                {"attribution": "Map tiles by \u0026copy; \u003ca href=\"http://www.mapbox.com/about/maps\"\u003eMapbox\u003c/a\u003e Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+            // var tile_layer_e3bf97b2e6ab4815bf9958cd1f230876 = L.tileLayer(
+            //     "https://{s}.tiles.mapbox.com/v3/mapbox.world-bright/{z}/{x}/{y}.png",
+            //     {"attribution": "Map tiles by \u0026copy; \u003ca href=\"http://www.mapbox.com/about/maps\"\u003eMapbox\u003c/a\u003e Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            // ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+
+
+            // L.geoJSON(data, {
+            //         style: function(feature) {
+            //             console.log(feature.properties.temperature)
+            //             switch (feature.properties.temperature) {
+            //                 case 'Hot': return {color: " #FF0000"};
+            //                 case 'Cold':   return {color: "#0000ff"};
+            //             }
+            //         }
+            //     }).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-            var circle_marker_19ead25987eb4f87b149203f758badd8 = L.circleMarker(
-                [5.63, -3.23],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_19ead25987eb4f87b149203f758badd8 = L.circleMarker(
+//                 [5.63, -3.23],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_08283c61143f4bfead303a9a82d8110f = L.popup({"maxWidth": "100%"});
+//         var popup_08283c61143f4bfead303a9a82d8110f = L.popup({"maxWidth": "100%"});
 
         
-            var html_f84eb9de64224c418a1a66504ed2cfd5 = $(`<div id="html_f84eb9de64224c418a1a66504ed2cfd5" style="width: 100.0%; height: 100.0%;">City: Abidjan<br> Average Temperature: 26.59 C<br></div>`)[0];
-            popup_08283c61143f4bfead303a9a82d8110f.setContent(html_f84eb9de64224c418a1a66504ed2cfd5);
+//             var html_f84eb9de64224c418a1a66504ed2cfd5 = $(`<div id="html_f84eb9de64224c418a1a66504ed2cfd5" style="width: 100.0%; height: 100.0%;">City: Abidjan<br> Average Temperature: 26.59 C<br></div>`)[0];
+//             popup_08283c61143f4bfead303a9a82d8110f.setContent(html_f84eb9de64224c418a1a66504ed2cfd5);
         
 
-        circle_marker_19ead25987eb4f87b149203f758badd8.bindPopup(popup_08283c61143f4bfead303a9a82d8110f)
-        ;
+//         circle_marker_19ead25987eb4f87b149203f758badd8.bindPopup(popup_08283c61143f4bfead303a9a82d8110f)
+//         ;
 
         
     
     
-            var circle_marker_37ff5b1409a34e9194027b19c61ede9a = L.circleMarker(
-                [8.84, 38.11],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_37ff5b1409a34e9194027b19c61ede9a = L.circleMarker(
+//                 [8.84, 38.11],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_c745299c3081404d9902ec750c1b350b = L.popup({"maxWidth": "100%"});
+//         var popup_c745299c3081404d9902ec750c1b350b = L.popup({"maxWidth": "100%"});
 
         
-            var html_4d266747c96043ed91e83aaa8451f35a = $(`<div id="html_4d266747c96043ed91e83aaa8451f35a" style="width: 100.0%; height: 100.0%;">City: Addis Abeba<br> Average Temperature: 17.31 C<br></div>`)[0];
-            popup_c745299c3081404d9902ec750c1b350b.setContent(html_4d266747c96043ed91e83aaa8451f35a);
+//             var html_4d266747c96043ed91e83aaa8451f35a = $(`<div id="html_4d266747c96043ed91e83aaa8451f35a" style="width: 100.0%; height: 100.0%;">City: Addis Abeba<br> Average Temperature: 17.31 C<br></div>`)[0];
+//             popup_c745299c3081404d9902ec750c1b350b.setContent(html_4d266747c96043ed91e83aaa8451f35a);
         
 
-        circle_marker_37ff5b1409a34e9194027b19c61ede9a.bindPopup(popup_c745299c3081404d9902ec750c1b350b)
-        ;
+//         circle_marker_37ff5b1409a34e9194027b19c61ede9a.bindPopup(popup_c745299c3081404d9902ec750c1b350b)
+//         ;
 
         
     
     
-            var circle_marker_e738e65b8d8f45c88c33c2a21248eeeb = L.circleMarker(
-                [23.31, 72.52],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_e738e65b8d8f45c88c33c2a21248eeeb = L.circleMarker(
+//                 [23.31, 72.52],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_b92207e4fc344497a1a92e26c004a1db = L.popup({"maxWidth": "100%"});
+//         var popup_b92207e4fc344497a1a92e26c004a1db = L.popup({"maxWidth": "100%"});
 
         
-            var html_6e797bedb38d4c3e9e8d046b5c326697 = $(`<div id="html_6e797bedb38d4c3e9e8d046b5c326697" style="width: 100.0%; height: 100.0%;">City: Ahmadabad<br> Average Temperature: 20.57 C<br></div>`)[0];
-            popup_b92207e4fc344497a1a92e26c004a1db.setContent(html_6e797bedb38d4c3e9e8d046b5c326697);
+//             var html_6e797bedb38d4c3e9e8d046b5c326697 = $(`<div id="html_6e797bedb38d4c3e9e8d046b5c326697" style="width: 100.0%; height: 100.0%;">City: Ahmadabad<br> Average Temperature: 20.57 C<br></div>`)[0];
+//             popup_b92207e4fc344497a1a92e26c004a1db.setContent(html_6e797bedb38d4c3e9e8d046b5c326697);
         
 
-        circle_marker_e738e65b8d8f45c88c33c2a21248eeeb.bindPopup(popup_b92207e4fc344497a1a92e26c004a1db)
-        ;
+//         circle_marker_e738e65b8d8f45c88c33c2a21248eeeb.bindPopup(popup_b92207e4fc344497a1a92e26c004a1db)
+//         ;
 
         
     
     
-            var circle_marker_e8c892ff8045431098f78ff2bfda7942 = L.circleMarker(
-                [36.17, 37.79],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_e8c892ff8045431098f78ff2bfda7942 = L.circleMarker(
+//                 [36.17, 37.79],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_7aa5afbab2384cad83e2657fc1d97855 = L.popup({"maxWidth": "100%"});
+//         var popup_7aa5afbab2384cad83e2657fc1d97855 = L.popup({"maxWidth": "100%"});
 
         
-            var html_b0ac19b7803a4c2fa1417c166e5b7803 = $(`<div id="html_b0ac19b7803a4c2fa1417c166e5b7803" style="width: 100.0%; height: 100.0%;">City: Aleppo<br> Average Temperature: 4.94 C<br></div>`)[0];
-            popup_7aa5afbab2384cad83e2657fc1d97855.setContent(html_b0ac19b7803a4c2fa1417c166e5b7803);
+//             var html_b0ac19b7803a4c2fa1417c166e5b7803 = $(`<div id="html_b0ac19b7803a4c2fa1417c166e5b7803" style="width: 100.0%; height: 100.0%;">City: Aleppo<br> Average Temperature: 4.94 C<br></div>`)[0];
+//             popup_7aa5afbab2384cad83e2657fc1d97855.setContent(html_b0ac19b7803a4c2fa1417c166e5b7803);
         
 
-        circle_marker_e8c892ff8045431098f78ff2bfda7942.bindPopup(popup_7aa5afbab2384cad83e2657fc1d97855)
-        ;
+//         circle_marker_e8c892ff8045431098f78ff2bfda7942.bindPopup(popup_7aa5afbab2384cad83e2657fc1d97855)
+//         ;
 
         
     
     
-            var circle_marker_b28366bb1ebe4e63b326b9fdc2161028 = L.circleMarker(
-                [31.35, 30.16],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_b28366bb1ebe4e63b326b9fdc2161028 = L.circleMarker(
+//                 [31.35, 30.16],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_93e525cc800147c3a41127951bb3f1e5 = L.popup({"maxWidth": "100%"});
+//         var popup_93e525cc800147c3a41127951bb3f1e5 = L.popup({"maxWidth": "100%"});
 
         
-            var html_13f5ab3866684dc48b80d72fb2d00348 = $(`<div id="html_13f5ab3866684dc48b80d72fb2d00348" style="width: 100.0%; height: 100.0%;">City: Alexandria<br> Average Temperature: 13.62 C<br></div>`)[0];
-            popup_93e525cc800147c3a41127951bb3f1e5.setContent(html_13f5ab3866684dc48b80d72fb2d00348);
+//             var html_13f5ab3866684dc48b80d72fb2d00348 = $(`<div id="html_13f5ab3866684dc48b80d72fb2d00348" style="width: 100.0%; height: 100.0%;">City: Alexandria<br> Average Temperature: 13.62 C<br></div>`)[0];
+//             popup_93e525cc800147c3a41127951bb3f1e5.setContent(html_13f5ab3866684dc48b80d72fb2d00348);
         
 
-        circle_marker_b28366bb1ebe4e63b326b9fdc2161028.bindPopup(popup_93e525cc800147c3a41127951bb3f1e5)
-        ;
+//         circle_marker_b28366bb1ebe4e63b326b9fdc2161028.bindPopup(popup_93e525cc800147c3a41127951bb3f1e5)
+//         ;
 
         
     
     
-            var circle_marker_901cacf6a916490f933bd13ca8e3aad0 = L.circleMarker(
-                [39.38, 33.29],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_901cacf6a916490f933bd13ca8e3aad0 = L.circleMarker(
+//                 [39.38, 33.29],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_cbe44a73c9b44ab18b6290c621e88369 = L.popup({"maxWidth": "100%"});
+//         var popup_cbe44a73c9b44ab18b6290c621e88369 = L.popup({"maxWidth": "100%"});
 
         
-            var html_77ecf368f4084a47b1d72f2085225c66 = $(`<div id="html_77ecf368f4084a47b1d72f2085225c66" style="width: 100.0%; height: 100.0%;">City: Ankara<br> Average Temperature: -4.89 C<br></div>`)[0];
-            popup_cbe44a73c9b44ab18b6290c621e88369.setContent(html_77ecf368f4084a47b1d72f2085225c66);
+//             var html_77ecf368f4084a47b1d72f2085225c66 = $(`<div id="html_77ecf368f4084a47b1d72f2085225c66" style="width: 100.0%; height: 100.0%;">City: Ankara<br> Average Temperature: -4.89 C<br></div>`)[0];
+//             popup_cbe44a73c9b44ab18b6290c621e88369.setContent(html_77ecf368f4084a47b1d72f2085225c66);
         
 
-        circle_marker_901cacf6a916490f933bd13ca8e3aad0.bindPopup(popup_cbe44a73c9b44ab18b6290c621e88369)
-        ;
+//         circle_marker_901cacf6a916490f933bd13ca8e3aad0.bindPopup(popup_cbe44a73c9b44ab18b6290c621e88369)
+//         ;
 
         
     
     
-            var circle_marker_f914b58808864688a0b98de8c6d73daa = L.circleMarker(
-                [32.95, 45.0],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_f914b58808864688a0b98de8c6d73daa = L.circleMarker(
+//                 [32.95, 45.0],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_9aa2eee61ae84c4283ac333ef3c2a894 = L.popup({"maxWidth": "100%"});
+//         var popup_9aa2eee61ae84c4283ac333ef3c2a894 = L.popup({"maxWidth": "100%"});
 
         
-            var html_b66a97fe38a54948b5723a8d428b5c2a = $(`<div id="html_b66a97fe38a54948b5723a8d428b5c2a" style="width: 100.0%; height: 100.0%;">City: Baghdad<br> Average Temperature: 9.17 C<br></div>`)[0];
-            popup_9aa2eee61ae84c4283ac333ef3c2a894.setContent(html_b66a97fe38a54948b5723a8d428b5c2a);
+//             var html_b66a97fe38a54948b5723a8d428b5c2a = $(`<div id="html_b66a97fe38a54948b5723a8d428b5c2a" style="width: 100.0%; height: 100.0%;">City: Baghdad<br> Average Temperature: 9.17 C<br></div>`)[0];
+//             popup_9aa2eee61ae84c4283ac333ef3c2a894.setContent(html_b66a97fe38a54948b5723a8d428b5c2a);
         
 
-        circle_marker_f914b58808864688a0b98de8c6d73daa.bindPopup(popup_9aa2eee61ae84c4283ac333ef3c2a894)
-        ;
+//         circle_marker_f914b58808864688a0b98de8c6d73daa.bindPopup(popup_9aa2eee61ae84c4283ac333ef3c2a894)
+//         ;
 
         
     
     
-            var circle_marker_2187c2a9760a43b7a2e84b41fc9e5008 = L.circleMarker(
-                [12.05, 77.26],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_2187c2a9760a43b7a2e84b41fc9e5008 = L.circleMarker(
+//                 [12.05, 77.26],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_8f2406213fc745bda336c93c6d5e1019 = L.popup({"maxWidth": "100%"});
+//         var popup_8f2406213fc745bda336c93c6d5e1019 = L.popup({"maxWidth": "100%"});
 
         
-            var html_206c5a5dc1fe4bc98dadd6bd756136e1 = $(`<div id="html_206c5a5dc1fe4bc98dadd6bd756136e1" style="width: 100.0%; height: 100.0%;">City: Bangalore<br> Average Temperature: 22.62 C<br></div>`)[0];
-            popup_8f2406213fc745bda336c93c6d5e1019.setContent(html_206c5a5dc1fe4bc98dadd6bd756136e1);
+//             var html_206c5a5dc1fe4bc98dadd6bd756136e1 = $(`<div id="html_206c5a5dc1fe4bc98dadd6bd756136e1" style="width: 100.0%; height: 100.0%;">City: Bangalore<br> Average Temperature: 22.62 C<br></div>`)[0];
+//             popup_8f2406213fc745bda336c93c6d5e1019.setContent(html_206c5a5dc1fe4bc98dadd6bd756136e1);
         
 
-        circle_marker_2187c2a9760a43b7a2e84b41fc9e5008.bindPopup(popup_8f2406213fc745bda336c93c6d5e1019)
-        ;
+//         circle_marker_2187c2a9760a43b7a2e84b41fc9e5008.bindPopup(popup_8f2406213fc745bda336c93c6d5e1019)
+//         ;
 
         
     
     
-            var circle_marker_65a9967ed06e4db6a3d73ad7cb52cd2e = L.circleMarker(
-                [13.66, 99.91],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_65a9967ed06e4db6a3d73ad7cb52cd2e = L.circleMarker(
+//                 [13.66, 99.91],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_8d43185a25ad4d4fb5f8a48dad2bf558 = L.popup({"maxWidth": "100%"});
+//         var popup_8d43185a25ad4d4fb5f8a48dad2bf558 = L.popup({"maxWidth": "100%"});
 
         
-            var html_0f24d884eca74cde9207f242e382948d = $(`<div id="html_0f24d884eca74cde9207f242e382948d" style="width: 100.0%; height: 100.0%;">City: Bangkok<br> Average Temperature: 25.5 C<br></div>`)[0];
-            popup_8d43185a25ad4d4fb5f8a48dad2bf558.setContent(html_0f24d884eca74cde9207f242e382948d);
+//             var html_0f24d884eca74cde9207f242e382948d = $(`<div id="html_0f24d884eca74cde9207f242e382948d" style="width: 100.0%; height: 100.0%;">City: Bangkok<br> Average Temperature: 25.5 C<br></div>`)[0];
+//             popup_8d43185a25ad4d4fb5f8a48dad2bf558.setContent(html_0f24d884eca74cde9207f242e382948d);
         
 
-        circle_marker_65a9967ed06e4db6a3d73ad7cb52cd2e.bindPopup(popup_8d43185a25ad4d4fb5f8a48dad2bf558)
-        ;
+//         circle_marker_65a9967ed06e4db6a3d73ad7cb52cd2e.bindPopup(popup_8d43185a25ad4d4fb5f8a48dad2bf558)
+//         ;
 
         
     
     
-            var circle_marker_6bb6c51c882c44368fc0eb276a1413ef = L.circleMarker(
-                [-20.09, -44.36],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_6bb6c51c882c44368fc0eb276a1413ef = L.circleMarker(
+//                 [-20.09, -44.36],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_54f94618deaa4ccbb7518666c847908c = L.popup({"maxWidth": "100%"});
+//         var popup_54f94618deaa4ccbb7518666c847908c = L.popup({"maxWidth": "100%"});
 
         
-            var html_f3c9e183457d42e8a8dcfd9f701a2186 = $(`<div id="html_f3c9e183457d42e8a8dcfd9f701a2186" style="width: 100.0%; height: 100.0%;">City: Belo Horizonte<br> Average Temperature: 23.49 C<br></div>`)[0];
-            popup_54f94618deaa4ccbb7518666c847908c.setContent(html_f3c9e183457d42e8a8dcfd9f701a2186);
+//             var html_f3c9e183457d42e8a8dcfd9f701a2186 = $(`<div id="html_f3c9e183457d42e8a8dcfd9f701a2186" style="width: 100.0%; height: 100.0%;">City: Belo Horizonte<br> Average Temperature: 23.49 C<br></div>`)[0];
+//             popup_54f94618deaa4ccbb7518666c847908c.setContent(html_f3c9e183457d42e8a8dcfd9f701a2186);
         
 
-        circle_marker_6bb6c51c882c44368fc0eb276a1413ef.bindPopup(popup_54f94618deaa4ccbb7518666c847908c)
-        ;
+//         circle_marker_6bb6c51c882c44368fc0eb276a1413ef.bindPopup(popup_54f94618deaa4ccbb7518666c847908c)
+//         ;
 
         
     
     
-            var circle_marker_f67b71e6c63043dca12bb882fedeb83b = L.circleMarker(
-                [52.24, 13.14],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_f67b71e6c63043dca12bb882fedeb83b = L.circleMarker(
+//                 [52.24, 13.14],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_661750ef3f304b59b2753237723f1363 = L.popup({"maxWidth": "100%"});
+//         var popup_661750ef3f304b59b2753237723f1363 = L.popup({"maxWidth": "100%"});
 
         
-            var html_9897a05e5b834773acfff8c8c9988880 = $(`<div id="html_9897a05e5b834773acfff8c8c9988880" style="width: 100.0%; height: 100.0%;">City: Berlin<br> Average Temperature: 2.62 C<br></div>`)[0];
-            popup_661750ef3f304b59b2753237723f1363.setContent(html_9897a05e5b834773acfff8c8c9988880);
+//             var html_9897a05e5b834773acfff8c8c9988880 = $(`<div id="html_9897a05e5b834773acfff8c8c9988880" style="width: 100.0%; height: 100.0%;">City: Berlin<br> Average Temperature: 2.62 C<br></div>`)[0];
+//             popup_661750ef3f304b59b2753237723f1363.setContent(html_9897a05e5b834773acfff8c8c9988880);
         
 
-        circle_marker_f67b71e6c63043dca12bb882fedeb83b.bindPopup(popup_661750ef3f304b59b2753237723f1363)
-        ;
+//         circle_marker_f67b71e6c63043dca12bb882fedeb83b.bindPopup(popup_661750ef3f304b59b2753237723f1363)
+//         ;
 
         
     
     
-            var circle_marker_f48be45721d044fc8f2332a08b357f0a = L.circleMarker(
-                [4.02, -74.73],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_f48be45721d044fc8f2332a08b357f0a = L.circleMarker(
+//                 [4.02, -74.73],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_fef976ec04ba4f2a8b553b560704d332 = L.popup({"maxWidth": "100%"});
+//         var popup_fef976ec04ba4f2a8b553b560704d332 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e1abcce997ad49fba3de694748e02b71 = $(`<div id="html_e1abcce997ad49fba3de694748e02b71" style="width: 100.0%; height: 100.0%;">City: Bogotá<br> Average Temperature: 20.1 C<br></div>`)[0];
-            popup_fef976ec04ba4f2a8b553b560704d332.setContent(html_e1abcce997ad49fba3de694748e02b71);
+//             var html_e1abcce997ad49fba3de694748e02b71 = $(`<div id="html_e1abcce997ad49fba3de694748e02b71" style="width: 100.0%; height: 100.0%;">City: Bogotá<br> Average Temperature: 20.1 C<br></div>`)[0];
+//             popup_fef976ec04ba4f2a8b553b560704d332.setContent(html_e1abcce997ad49fba3de694748e02b71);
         
 
-        circle_marker_f48be45721d044fc8f2332a08b357f0a.bindPopup(popup_fef976ec04ba4f2a8b553b560704d332)
-        ;
+//         circle_marker_f48be45721d044fc8f2332a08b357f0a.bindPopup(popup_fef976ec04ba4f2a8b553b560704d332)
+//         ;
 
         
     
     
-            var circle_marker_5a46722105874a70aaedc7dfcfc748e3 = L.circleMarker(
-                [18.48, 72.68],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_5a46722105874a70aaedc7dfcfc748e3 = L.circleMarker(
+//                 [18.48, 72.68],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_73f47c7931d841958525893ffa2814d4 = L.popup({"maxWidth": "100%"});
+//         var popup_73f47c7931d841958525893ffa2814d4 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d9dac35d752e4f7da0b007766f9db46a = $(`<div id="html_d9dac35d752e4f7da0b007766f9db46a" style="width: 100.0%; height: 100.0%;">City: Bombay<br> Average Temperature: 24.93 C<br></div>`)[0];
-            popup_73f47c7931d841958525893ffa2814d4.setContent(html_d9dac35d752e4f7da0b007766f9db46a);
+//             var html_d9dac35d752e4f7da0b007766f9db46a = $(`<div id="html_d9dac35d752e4f7da0b007766f9db46a" style="width: 100.0%; height: 100.0%;">City: Bombay<br> Average Temperature: 24.93 C<br></div>`)[0];
+//             popup_73f47c7931d841958525893ffa2814d4.setContent(html_d9dac35d752e4f7da0b007766f9db46a);
         
 
-        circle_marker_5a46722105874a70aaedc7dfcfc748e3.bindPopup(popup_73f47c7931d841958525893ffa2814d4)
-        ;
+//         circle_marker_5a46722105874a70aaedc7dfcfc748e3.bindPopup(popup_73f47c7931d841958525893ffa2814d4)
+//         ;
 
         
     
     
-            var circle_marker_cdf50b6612b44ab3a45bb2ee6260ea0f = L.circleMarker(
-                [-15.27, -47.5],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_cdf50b6612b44ab3a45bb2ee6260ea0f = L.circleMarker(
+//                 [-15.27, -47.5],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_c91e144fdd6d426abbc87761cdcb7164 = L.popup({"maxWidth": "100%"});
+//         var popup_c91e144fdd6d426abbc87761cdcb7164 = L.popup({"maxWidth": "100%"});
 
         
-            var html_120baada49db4440860b85ef33c8d236 = $(`<div id="html_120baada49db4440860b85ef33c8d236" style="width: 100.0%; height: 100.0%;">City: Brasília<br> Average Temperature: 22.92 C<br></div>`)[0];
-            popup_c91e144fdd6d426abbc87761cdcb7164.setContent(html_120baada49db4440860b85ef33c8d236);
+//             var html_120baada49db4440860b85ef33c8d236 = $(`<div id="html_120baada49db4440860b85ef33c8d236" style="width: 100.0%; height: 100.0%;">City: Brasília<br> Average Temperature: 22.92 C<br></div>`)[0];
+//             popup_c91e144fdd6d426abbc87761cdcb7164.setContent(html_120baada49db4440860b85ef33c8d236);
         
 
-        circle_marker_cdf50b6612b44ab3a45bb2ee6260ea0f.bindPopup(popup_c91e144fdd6d426abbc87761cdcb7164)
-        ;
+//         circle_marker_cdf50b6612b44ab3a45bb2ee6260ea0f.bindPopup(popup_c91e144fdd6d426abbc87761cdcb7164)
+//         ;
 
         
     
     
-            var circle_marker_e54d5de1e5ff4ca5853e059f6bbff779 = L.circleMarker(
-                [29.74, 31.38],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_e54d5de1e5ff4ca5853e059f6bbff779 = L.circleMarker(
+//                 [29.74, 31.38],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_29117e47bc22441aa39fb9050e39dc25 = L.popup({"maxWidth": "100%"});
+//         var popup_29117e47bc22441aa39fb9050e39dc25 = L.popup({"maxWidth": "100%"});
 
         
-            var html_ae0ff765c8aa4fc1b7a9dc03f18ac238 = $(`<div id="html_ae0ff765c8aa4fc1b7a9dc03f18ac238" style="width: 100.0%; height: 100.0%;">City: Cairo<br> Average Temperature: 12.32 C<br></div>`)[0];
-            popup_29117e47bc22441aa39fb9050e39dc25.setContent(html_ae0ff765c8aa4fc1b7a9dc03f18ac238);
+//             var html_ae0ff765c8aa4fc1b7a9dc03f18ac238 = $(`<div id="html_ae0ff765c8aa4fc1b7a9dc03f18ac238" style="width: 100.0%; height: 100.0%;">City: Cairo<br> Average Temperature: 12.32 C<br></div>`)[0];
+//             popup_29117e47bc22441aa39fb9050e39dc25.setContent(html_ae0ff765c8aa4fc1b7a9dc03f18ac238);
         
 
-        circle_marker_e54d5de1e5ff4ca5853e059f6bbff779.bindPopup(popup_29117e47bc22441aa39fb9050e39dc25)
-        ;
+//         circle_marker_e54d5de1e5ff4ca5853e059f6bbff779.bindPopup(popup_29117e47bc22441aa39fb9050e39dc25)
+//         ;
 
         
     
     
-            var circle_marker_2107bf2a0c8243f58bd089ebbe81f4a2 = L.circleMarker(
-                [23.31, 88.25],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_2107bf2a0c8243f58bd089ebbe81f4a2 = L.circleMarker(
+//                 [23.31, 88.25],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_36caaa25caff4d0892eae8c3fd0b783e = L.popup({"maxWidth": "100%"});
+//         var popup_36caaa25caff4d0892eae8c3fd0b783e = L.popup({"maxWidth": "100%"});
 
         
-            var html_fca956fc6f6a48fdaa9c7fdc3b046993 = $(`<div id="html_fca956fc6f6a48fdaa9c7fdc3b046993" style="width: 100.0%; height: 100.0%;">City: Calcutta<br> Average Temperature: 18.72 C<br></div>`)[0];
-            popup_36caaa25caff4d0892eae8c3fd0b783e.setContent(html_fca956fc6f6a48fdaa9c7fdc3b046993);
+//             var html_fca956fc6f6a48fdaa9c7fdc3b046993 = $(`<div id="html_fca956fc6f6a48fdaa9c7fdc3b046993" style="width: 100.0%; height: 100.0%;">City: Calcutta<br> Average Temperature: 18.72 C<br></div>`)[0];
+//             popup_36caaa25caff4d0892eae8c3fd0b783e.setContent(html_fca956fc6f6a48fdaa9c7fdc3b046993);
         
 
-        circle_marker_2107bf2a0c8243f58bd089ebbe81f4a2.bindPopup(popup_36caaa25caff4d0892eae8c3fd0b783e)
-        ;
+//         circle_marker_2107bf2a0c8243f58bd089ebbe81f4a2.bindPopup(popup_36caaa25caff4d0892eae8c3fd0b783e)
+//         ;
 
         
     
     
-            var circle_marker_7ef92e3c23e64ab286dd1140b31ff879 = L.circleMarker(
-                [4.02, -76.34],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_7ef92e3c23e64ab286dd1140b31ff879 = L.circleMarker(
+//                 [4.02, -76.34],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_3a4e288c279c440997c438f955eace68 = L.popup({"maxWidth": "100%"});
+//         var popup_3a4e288c279c440997c438f955eace68 = L.popup({"maxWidth": "100%"});
 
         
-            var html_f18e1da040164c73918c6c9b5f9aeb6b = $(`<div id="html_f18e1da040164c73918c6c9b5f9aeb6b" style="width: 100.0%; height: 100.0%;">City: Cali<br> Average Temperature: 22.04 C<br></div>`)[0];
-            popup_3a4e288c279c440997c438f955eace68.setContent(html_f18e1da040164c73918c6c9b5f9aeb6b);
+//             var html_f18e1da040164c73918c6c9b5f9aeb6b = $(`<div id="html_f18e1da040164c73918c6c9b5f9aeb6b" style="width: 100.0%; height: 100.0%;">City: Cali<br> Average Temperature: 22.04 C<br></div>`)[0];
+//             popup_3a4e288c279c440997c438f955eace68.setContent(html_f18e1da040164c73918c6c9b5f9aeb6b);
         
 
-        circle_marker_7ef92e3c23e64ab286dd1140b31ff879.bindPopup(popup_3a4e288c279c440997c438f955eace68)
-        ;
+//         circle_marker_7ef92e3c23e64ab286dd1140b31ff879.bindPopup(popup_3a4e288c279c440997c438f955eace68)
+//         ;
 
         
     
     
-            var circle_marker_6eced95b78ce4c548aadccfc7615fde8 = L.circleMarker(
-                [-32.95, 18.19],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_6eced95b78ce4c548aadccfc7615fde8 = L.circleMarker(
+//                 [-32.95, 18.19],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_6d290c53739b493ab6805ae2f0636a05 = L.popup({"maxWidth": "100%"});
+//         var popup_6d290c53739b493ab6805ae2f0636a05 = L.popup({"maxWidth": "100%"});
 
         
-            var html_45bfb54c4a3a442ab708b16c695243da = $(`<div id="html_45bfb54c4a3a442ab708b16c695243da" style="width: 100.0%; height: 100.0%;">City: Cape Town<br> Average Temperature: 20.85 C<br></div>`)[0];
-            popup_6d290c53739b493ab6805ae2f0636a05.setContent(html_45bfb54c4a3a442ab708b16c695243da);
+//             var html_45bfb54c4a3a442ab708b16c695243da = $(`<div id="html_45bfb54c4a3a442ab708b16c695243da" style="width: 100.0%; height: 100.0%;">City: Cape Town<br> Average Temperature: 20.85 C<br></div>`)[0];
+//             popup_6d290c53739b493ab6805ae2f0636a05.setContent(html_45bfb54c4a3a442ab708b16c695243da);
         
 
-        circle_marker_6eced95b78ce4c548aadccfc7615fde8.bindPopup(popup_6d290c53739b493ab6805ae2f0636a05)
-        ;
+//         circle_marker_6eced95b78ce4c548aadccfc7615fde8.bindPopup(popup_6d290c53739b493ab6805ae2f0636a05)
+//         ;
 
         
     
     
-            var circle_marker_a195c8e8921d4e64a031cf16bf462bcc = L.circleMarker(
-                [32.95, -6.7],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_a195c8e8921d4e64a031cf16bf462bcc = L.circleMarker(
+//                 [32.95, -6.7],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_5c16491ee40d4aee81be5e2240c8c81a = L.popup({"maxWidth": "100%"});
+//         var popup_5c16491ee40d4aee81be5e2240c8c81a = L.popup({"maxWidth": "100%"});
 
         
-            var html_910a12c550324d0fa6c3fcb9b12bff85 = $(`<div id="html_910a12c550324d0fa6c3fcb9b12bff85" style="width: 100.0%; height: 100.0%;">City: Casablanca<br> Average Temperature: 8.56 C<br></div>`)[0];
-            popup_5c16491ee40d4aee81be5e2240c8c81a.setContent(html_910a12c550324d0fa6c3fcb9b12bff85);
+//             var html_910a12c550324d0fa6c3fcb9b12bff85 = $(`<div id="html_910a12c550324d0fa6c3fcb9b12bff85" style="width: 100.0%; height: 100.0%;">City: Casablanca<br> Average Temperature: 8.56 C<br></div>`)[0];
+//             popup_5c16491ee40d4aee81be5e2240c8c81a.setContent(html_910a12c550324d0fa6c3fcb9b12bff85);
         
 
-        circle_marker_a195c8e8921d4e64a031cf16bf462bcc.bindPopup(popup_5c16491ee40d4aee81be5e2240c8c81a)
-        ;
+//         circle_marker_a195c8e8921d4e64a031cf16bf462bcc.bindPopup(popup_5c16491ee40d4aee81be5e2240c8c81a)
+//         ;
 
         
     
     
-            var circle_marker_15bc1ffcc9534c8d8bd59beef7208500 = L.circleMarker(
-                [44.2, 125.22],
-                {"bubblingMouseEvents": true, "color": "#4393c3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4393c3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_15bc1ffcc9534c8d8bd59beef7208500 = L.circleMarker(
+//                 [44.2, 125.22],
+//                 {"bubblingMouseEvents": true, "color": "#4393c3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4393c3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_e520bccfedb84d1db373c4e1bab08992 = L.popup({"maxWidth": "100%"});
+//         var popup_e520bccfedb84d1db373c4e1bab08992 = L.popup({"maxWidth": "100%"});
 
         
-            var html_8f78b6f1fd184b5498d1235179e8b37c = $(`<div id="html_8f78b6f1fd184b5498d1235179e8b37c" style="width: 100.0%; height: 100.0%;">City: Changchun<br> Average Temperature: -15.14 C<br></div>`)[0];
-            popup_e520bccfedb84d1db373c4e1bab08992.setContent(html_8f78b6f1fd184b5498d1235179e8b37c);
+//             var html_8f78b6f1fd184b5498d1235179e8b37c = $(`<div id="html_8f78b6f1fd184b5498d1235179e8b37c" style="width: 100.0%; height: 100.0%;">City: Changchun<br> Average Temperature: -15.14 C<br></div>`)[0];
+//             popup_e520bccfedb84d1db373c4e1bab08992.setContent(html_8f78b6f1fd184b5498d1235179e8b37c);
         
 
-        circle_marker_15bc1ffcc9534c8d8bd59beef7208500.bindPopup(popup_e520bccfedb84d1db373c4e1bab08992)
-        ;
+//         circle_marker_15bc1ffcc9534c8d8bd59beef7208500.bindPopup(popup_e520bccfedb84d1db373c4e1bab08992)
+//         ;
 
         
     
     
-            var circle_marker_d5477485c51841cc9d3d7299f8b8c4fc = L.circleMarker(
-                [31.35, 103.66],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_d5477485c51841cc9d3d7299f8b8c4fc = L.circleMarker(
+//                 [31.35, 103.66],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_0d27b9f8db4f477fb6c92e6f9bf45abc = L.popup({"maxWidth": "100%"});
+//         var popup_0d27b9f8db4f477fb6c92e6f9bf45abc = L.popup({"maxWidth": "100%"});
 
         
-            var html_df99ddbc828a4c8d8957a312a97002c6 = $(`<div id="html_df99ddbc828a4c8d8957a312a97002c6" style="width: 100.0%; height: 100.0%;">City: Chengdu<br> Average Temperature: -0.94 C<br></div>`)[0];
-            popup_0d27b9f8db4f477fb6c92e6f9bf45abc.setContent(html_df99ddbc828a4c8d8957a312a97002c6);
+//             var html_df99ddbc828a4c8d8957a312a97002c6 = $(`<div id="html_df99ddbc828a4c8d8957a312a97002c6" style="width: 100.0%; height: 100.0%;">City: Chengdu<br> Average Temperature: -0.94 C<br></div>`)[0];
+//             popup_0d27b9f8db4f477fb6c92e6f9bf45abc.setContent(html_df99ddbc828a4c8d8957a312a97002c6);
         
 
-        circle_marker_d5477485c51841cc9d3d7299f8b8c4fc.bindPopup(popup_0d27b9f8db4f477fb6c92e6f9bf45abc)
-        ;
+//         circle_marker_d5477485c51841cc9d3d7299f8b8c4fc.bindPopup(popup_0d27b9f8db4f477fb6c92e6f9bf45abc)
+//         ;
 
         
     
     
-            var circle_marker_7ae89c997d20494ea25d15ec23a7019b = L.circleMarker(
-                [42.59, -87.27],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_7ae89c997d20494ea25d15ec23a7019b = L.circleMarker(
+//                 [42.59, -87.27],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_fc1910cbf8d7439eb3f1e065a3fef6a8 = L.popup({"maxWidth": "100%"});
+//         var popup_fc1910cbf8d7439eb3f1e065a3fef6a8 = L.popup({"maxWidth": "100%"});
 
         
-            var html_c133b239155241cd9c06afb339b03f10 = $(`<div id="html_c133b239155241cd9c06afb339b03f10" style="width: 100.0%; height: 100.0%;">City: Chicago<br> Average Temperature: 1.03 C<br></div>`)[0];
-            popup_fc1910cbf8d7439eb3f1e065a3fef6a8.setContent(html_c133b239155241cd9c06afb339b03f10);
+//             var html_c133b239155241cd9c06afb339b03f10 = $(`<div id="html_c133b239155241cd9c06afb339b03f10" style="width: 100.0%; height: 100.0%;">City: Chicago<br> Average Temperature: 1.03 C<br></div>`)[0];
+//             popup_fc1910cbf8d7439eb3f1e065a3fef6a8.setContent(html_c133b239155241cd9c06afb339b03f10);
         
 
-        circle_marker_7ae89c997d20494ea25d15ec23a7019b.bindPopup(popup_fc1910cbf8d7439eb3f1e065a3fef6a8)
-        ;
+//         circle_marker_7ae89c997d20494ea25d15ec23a7019b.bindPopup(popup_fc1910cbf8d7439eb3f1e065a3fef6a8)
+//         ;
 
         
     
     
-            var circle_marker_0b2e2aacdf9e43f58a2a42285b9f3035 = L.circleMarker(
-                [29.74, 107.08],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_0b2e2aacdf9e43f58a2a42285b9f3035 = L.circleMarker(
+//                 [29.74, 107.08],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_fae5b604a92d4723b1242646ea84dfe3 = L.popup({"maxWidth": "100%"});
+//         var popup_fae5b604a92d4723b1242646ea84dfe3 = L.popup({"maxWidth": "100%"});
 
         
-            var html_85ca9237addd4129bc26ca62289b8ea6 = $(`<div id="html_85ca9237addd4129bc26ca62289b8ea6" style="width: 100.0%; height: 100.0%;">City: Chongqing<br> Average Temperature: 5.21 C<br></div>`)[0];
-            popup_fae5b604a92d4723b1242646ea84dfe3.setContent(html_85ca9237addd4129bc26ca62289b8ea6);
+//             var html_85ca9237addd4129bc26ca62289b8ea6 = $(`<div id="html_85ca9237addd4129bc26ca62289b8ea6" style="width: 100.0%; height: 100.0%;">City: Chongqing<br> Average Temperature: 5.21 C<br></div>`)[0];
+//             popup_fae5b604a92d4723b1242646ea84dfe3.setContent(html_85ca9237addd4129bc26ca62289b8ea6);
         
 
-        circle_marker_0b2e2aacdf9e43f58a2a42285b9f3035.bindPopup(popup_fae5b604a92d4723b1242646ea84dfe3)
-        ;
+//         circle_marker_0b2e2aacdf9e43f58a2a42285b9f3035.bindPopup(popup_fae5b604a92d4723b1242646ea84dfe3)
+//         ;
 
         
     
     
-            var circle_marker_f74b8ff902484329897f98ddf0fc93f2 = L.circleMarker(
-                [15.27, -17.5],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_f74b8ff902484329897f98ddf0fc93f2 = L.circleMarker(
+//                 [15.27, -17.5],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_99eff9ef7c6c4b49b17da2547d9c14ac = L.popup({"maxWidth": "100%"});
+//         var popup_99eff9ef7c6c4b49b17da2547d9c14ac = L.popup({"maxWidth": "100%"});
 
         
-            var html_a48b2c78af5d47ec82acce4bdfd43e3f = $(`<div id="html_a48b2c78af5d47ec82acce4bdfd43e3f" style="width: 100.0%; height: 100.0%;">City: Dakar<br> Average Temperature: 22.0 C<br></div>`)[0];
-            popup_99eff9ef7c6c4b49b17da2547d9c14ac.setContent(html_a48b2c78af5d47ec82acce4bdfd43e3f);
+//             var html_a48b2c78af5d47ec82acce4bdfd43e3f = $(`<div id="html_a48b2c78af5d47ec82acce4bdfd43e3f" style="width: 100.0%; height: 100.0%;">City: Dakar<br> Average Temperature: 22.0 C<br></div>`)[0];
+//             popup_99eff9ef7c6c4b49b17da2547d9c14ac.setContent(html_a48b2c78af5d47ec82acce4bdfd43e3f);
         
 
-        circle_marker_f74b8ff902484329897f98ddf0fc93f2.bindPopup(popup_99eff9ef7c6c4b49b17da2547d9c14ac)
-        ;
+//         circle_marker_f74b8ff902484329897f98ddf0fc93f2.bindPopup(popup_99eff9ef7c6c4b49b17da2547d9c14ac)
+//         ;
 
         
     
     
-            var circle_marker_501b0433e3364632b631a486b4e54ee9 = L.circleMarker(
-                [39.38, 120.69],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_501b0433e3364632b631a486b4e54ee9 = L.circleMarker(
+//                 [39.38, 120.69],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_be982a095d834ae583279c235cd61c92 = L.popup({"maxWidth": "100%"});
+//         var popup_be982a095d834ae583279c235cd61c92 = L.popup({"maxWidth": "100%"});
 
         
-            var html_a5b9f8e822b746ac9f1f99c8d5eaa108 = $(`<div id="html_a5b9f8e822b746ac9f1f99c8d5eaa108" style="width: 100.0%; height: 100.0%;">City: Dalian<br> Average Temperature: -3.89 C<br></div>`)[0];
-            popup_be982a095d834ae583279c235cd61c92.setContent(html_a5b9f8e822b746ac9f1f99c8d5eaa108);
+//             var html_a5b9f8e822b746ac9f1f99c8d5eaa108 = $(`<div id="html_a5b9f8e822b746ac9f1f99c8d5eaa108" style="width: 100.0%; height: 100.0%;">City: Dalian<br> Average Temperature: -3.89 C<br></div>`)[0];
+//             popup_be982a095d834ae583279c235cd61c92.setContent(html_a5b9f8e822b746ac9f1f99c8d5eaa108);
         
 
-        circle_marker_501b0433e3364632b631a486b4e54ee9.bindPopup(popup_be982a095d834ae583279c235cd61c92)
-        ;
+//         circle_marker_501b0433e3364632b631a486b4e54ee9.bindPopup(popup_be982a095d834ae583279c235cd61c92)
+//         ;
 
         
     
     
-            var circle_marker_0dff5426efc94970be4f820131850975 = L.circleMarker(
-                [-7.23, 39.73],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_0dff5426efc94970be4f820131850975 = L.circleMarker(
+//                 [-7.23, 39.73],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_40b04321da5b4c9b92626a3019f78440 = L.popup({"maxWidth": "100%"});
+//         var popup_40b04321da5b4c9b92626a3019f78440 = L.popup({"maxWidth": "100%"});
 
         
-            var html_82383ec49b7348168a4ad8967582a31e = $(`<div id="html_82383ec49b7348168a4ad8967582a31e" style="width: 100.0%; height: 100.0%;">City: Dar Es Salaam<br> Average Temperature: 27.69 C<br></div>`)[0];
-            popup_40b04321da5b4c9b92626a3019f78440.setContent(html_82383ec49b7348168a4ad8967582a31e);
+//             var html_82383ec49b7348168a4ad8967582a31e = $(`<div id="html_82383ec49b7348168a4ad8967582a31e" style="width: 100.0%; height: 100.0%;">City: Dar Es Salaam<br> Average Temperature: 27.69 C<br></div>`)[0];
+//             popup_40b04321da5b4c9b92626a3019f78440.setContent(html_82383ec49b7348168a4ad8967582a31e);
         
 
-        circle_marker_0dff5426efc94970be4f820131850975.bindPopup(popup_40b04321da5b4c9b92626a3019f78440)
-        ;
+//         circle_marker_0dff5426efc94970be4f820131850975.bindPopup(popup_40b04321da5b4c9b92626a3019f78440)
+//         ;
 
         
     
     
-            var circle_marker_3dc257f3bbb8477cad63b1e42ddc899d = L.circleMarker(
-                [28.13, 77.27],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_3dc257f3bbb8477cad63b1e42ddc899d = L.circleMarker(
+//                 [28.13, 77.27],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_03d47632447742a6882d6701ab8ed8d1 = L.popup({"maxWidth": "100%"});
+//         var popup_03d47632447742a6882d6701ab8ed8d1 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e505b3bbde4f46deb35e31bc82447b4c = $(`<div id="html_e505b3bbde4f46deb35e31bc82447b4c" style="width: 100.0%; height: 100.0%;">City: Delhi<br> Average Temperature: 15.05 C<br></div>`)[0];
-            popup_03d47632447742a6882d6701ab8ed8d1.setContent(html_e505b3bbde4f46deb35e31bc82447b4c);
+//             var html_e505b3bbde4f46deb35e31bc82447b4c = $(`<div id="html_e505b3bbde4f46deb35e31bc82447b4c" style="width: 100.0%; height: 100.0%;">City: Delhi<br> Average Temperature: 15.05 C<br></div>`)[0];
+//             popup_03d47632447742a6882d6701ab8ed8d1.setContent(html_e505b3bbde4f46deb35e31bc82447b4c);
         
 
-        circle_marker_3dc257f3bbb8477cad63b1e42ddc899d.bindPopup(popup_03d47632447742a6882d6701ab8ed8d1)
-        ;
+//         circle_marker_3dc257f3bbb8477cad63b1e42ddc899d.bindPopup(popup_03d47632447742a6882d6701ab8ed8d1)
+//         ;
 
         
     
     
-            var circle_marker_c0ab77742ee0413f8db7051016bcb061 = L.circleMarker(
-                [23.31, 90.0],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_c0ab77742ee0413f8db7051016bcb061 = L.circleMarker(
+//                 [23.31, 90.0],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_c30558b2b2c44c1a885e604681d543c1 = L.popup({"maxWidth": "100%"});
+//         var popup_c30558b2b2c44c1a885e604681d543c1 = L.popup({"maxWidth": "100%"});
 
         
-            var html_bbfccf6b2cb847afb21718f8b82572ba = $(`<div id="html_bbfccf6b2cb847afb21718f8b82572ba" style="width: 100.0%; height: 100.0%;">City: Dhaka<br> Average Temperature: 18.26 C<br></div>`)[0];
-            popup_c30558b2b2c44c1a885e604681d543c1.setContent(html_bbfccf6b2cb847afb21718f8b82572ba);
+//             var html_bbfccf6b2cb847afb21718f8b82572ba = $(`<div id="html_bbfccf6b2cb847afb21718f8b82572ba" style="width: 100.0%; height: 100.0%;">City: Dhaka<br> Average Temperature: 18.26 C<br></div>`)[0];
+//             popup_c30558b2b2c44c1a885e604681d543c1.setContent(html_bbfccf6b2cb847afb21718f8b82572ba);
         
 
-        circle_marker_c0ab77742ee0413f8db7051016bcb061.bindPopup(popup_c30558b2b2c44c1a885e604681d543c1)
-        ;
+//         circle_marker_c0ab77742ee0413f8db7051016bcb061.bindPopup(popup_c30558b2b2c44c1a885e604681d543c1)
+//         ;
 
         
     
     
-            var circle_marker_781fcb2d01e74a1ebe49c4e1597bff87 = L.circleMarker(
-                [-29.74, 31.38],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_781fcb2d01e74a1ebe49c4e1597bff87 = L.circleMarker(
+//                 [-29.74, 31.38],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_98cf4f5780384c5fa27d9fd4f352a44a = L.popup({"maxWidth": "100%"});
+//         var popup_98cf4f5780384c5fa27d9fd4f352a44a = L.popup({"maxWidth": "100%"});
 
         
-            var html_ea3d683c6cb3451b84ee803f8bbb64f2 = $(`<div id="html_ea3d683c6cb3451b84ee803f8bbb64f2" style="width: 100.0%; height: 100.0%;">City: Durban<br> Average Temperature: 23.76 C<br></div>`)[0];
-            popup_98cf4f5780384c5fa27d9fd4f352a44a.setContent(html_ea3d683c6cb3451b84ee803f8bbb64f2);
+//             var html_ea3d683c6cb3451b84ee803f8bbb64f2 = $(`<div id="html_ea3d683c6cb3451b84ee803f8bbb64f2" style="width: 100.0%; height: 100.0%;">City: Durban<br> Average Temperature: 23.76 C<br></div>`)[0];
+//             popup_98cf4f5780384c5fa27d9fd4f352a44a.setContent(html_ea3d683c6cb3451b84ee803f8bbb64f2);
         
 
-        circle_marker_781fcb2d01e74a1ebe49c4e1597bff87.bindPopup(popup_98cf4f5780384c5fa27d9fd4f352a44a)
-        ;
+//         circle_marker_781fcb2d01e74a1ebe49c4e1597bff87.bindPopup(popup_98cf4f5780384c5fa27d9fd4f352a44a)
+//         ;
 
         
     
     
-            var circle_marker_4b97ce969b2a446187661bf0668c58a6 = L.circleMarker(
-                [31.35, 73.51],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_4b97ce969b2a446187661bf0668c58a6 = L.circleMarker(
+//                 [31.35, 73.51],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_33a2617d489a4bb0a00ced860df90f21 = L.popup({"maxWidth": "100%"});
+//         var popup_33a2617d489a4bb0a00ced860df90f21 = L.popup({"maxWidth": "100%"});
 
         
-            var html_3f7247fd801747acb0cbe6ded35ff120 = $(`<div id="html_3f7247fd801747acb0cbe6ded35ff120" style="width: 100.0%; height: 100.0%;">City: Faisalabad<br> Average Temperature: 12.31 C<br></div>`)[0];
-            popup_33a2617d489a4bb0a00ced860df90f21.setContent(html_3f7247fd801747acb0cbe6ded35ff120);
+//             var html_3f7247fd801747acb0cbe6ded35ff120 = $(`<div id="html_3f7247fd801747acb0cbe6ded35ff120" style="width: 100.0%; height: 100.0%;">City: Faisalabad<br> Average Temperature: 12.31 C<br></div>`)[0];
+//             popup_33a2617d489a4bb0a00ced860df90f21.setContent(html_3f7247fd801747acb0cbe6ded35ff120);
         
 
-        circle_marker_4b97ce969b2a446187661bf0668c58a6.bindPopup(popup_33a2617d489a4bb0a00ced860df90f21)
-        ;
+//         circle_marker_4b97ce969b2a446187661bf0668c58a6.bindPopup(popup_33a2617d489a4bb0a00ced860df90f21)
+//         ;
 
         
     
     
-            var circle_marker_70133685141748679dc51cee778bb3a5 = L.circleMarker(
-                [-4.02, -40.98],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_70133685141748679dc51cee778bb3a5 = L.circleMarker(
+//                 [-4.02, -40.98],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_00d028c25eb2435a94e3f713fcde7ca6 = L.popup({"maxWidth": "100%"});
+//         var popup_00d028c25eb2435a94e3f713fcde7ca6 = L.popup({"maxWidth": "100%"});
 
         
-            var html_46c45d4d45774226bab81910848d1d5a = $(`<div id="html_46c45d4d45774226bab81910848d1d5a" style="width: 100.0%; height: 100.0%;">City: Fortaleza<br> Average Temperature: 28.05 C<br></div>`)[0];
-            popup_00d028c25eb2435a94e3f713fcde7ca6.setContent(html_46c45d4d45774226bab81910848d1d5a);
+//             var html_46c45d4d45774226bab81910848d1d5a = $(`<div id="html_46c45d4d45774226bab81910848d1d5a" style="width: 100.0%; height: 100.0%;">City: Fortaleza<br> Average Temperature: 28.05 C<br></div>`)[0];
+//             popup_00d028c25eb2435a94e3f713fcde7ca6.setContent(html_46c45d4d45774226bab81910848d1d5a);
         
 
-        circle_marker_70133685141748679dc51cee778bb3a5.bindPopup(popup_00d028c25eb2435a94e3f713fcde7ca6)
-        ;
+//         circle_marker_70133685141748679dc51cee778bb3a5.bindPopup(popup_00d028c25eb2435a94e3f713fcde7ca6)
+//         ;
 
         
     
     
-            var circle_marker_96464510614b466da2960633bfa3dd98 = L.circleMarker(
-                [29.74, 31.38],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_96464510614b466da2960633bfa3dd98 = L.circleMarker(
+//                 [29.74, 31.38],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_180235caaeae4fd0b8401e406ca091d4 = L.popup({"maxWidth": "100%"});
+//         var popup_180235caaeae4fd0b8401e406ca091d4 = L.popup({"maxWidth": "100%"});
 
         
-            var html_4891c9302e1f4fab82de76bb415762e0 = $(`<div id="html_4891c9302e1f4fab82de76bb415762e0" style="width: 100.0%; height: 100.0%;">City: Gizeh<br> Average Temperature: 12.32 C<br></div>`)[0];
-            popup_180235caaeae4fd0b8401e406ca091d4.setContent(html_4891c9302e1f4fab82de76bb415762e0);
+//             var html_4891c9302e1f4fab82de76bb415762e0 = $(`<div id="html_4891c9302e1f4fab82de76bb415762e0" style="width: 100.0%; height: 100.0%;">City: Gizeh<br> Average Temperature: 12.32 C<br></div>`)[0];
+//             popup_180235caaeae4fd0b8401e406ca091d4.setContent(html_4891c9302e1f4fab82de76bb415762e0);
         
 
-        circle_marker_96464510614b466da2960633bfa3dd98.bindPopup(popup_180235caaeae4fd0b8401e406ca091d4)
-        ;
+//         circle_marker_96464510614b466da2960633bfa3dd98.bindPopup(popup_180235caaeae4fd0b8401e406ca091d4)
+//         ;
 
         
     
     
-            var circle_marker_f8e303feedaf4288b7b77bc823b3c52c = L.circleMarker(
-                [23.31, 112.72],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_f8e303feedaf4288b7b77bc823b3c52c = L.circleMarker(
+//                 [23.31, 112.72],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_fad21262f316485e9fcf1609c4ecea9c = L.popup({"maxWidth": "100%"});
+//         var popup_fad21262f316485e9fcf1609c4ecea9c = L.popup({"maxWidth": "100%"});
 
         
-            var html_505d9c7f687f403984d7c14f4d5eb6b5 = $(`<div id="html_505d9c7f687f403984d7c14f4d5eb6b5" style="width: 100.0%; height: 100.0%;">City: Guangzhou<br> Average Temperature: 11.28 C<br></div>`)[0];
-            popup_fad21262f316485e9fcf1609c4ecea9c.setContent(html_505d9c7f687f403984d7c14f4d5eb6b5);
+//             var html_505d9c7f687f403984d7c14f4d5eb6b5 = $(`<div id="html_505d9c7f687f403984d7c14f4d5eb6b5" style="width: 100.0%; height: 100.0%;">City: Guangzhou<br> Average Temperature: 11.28 C<br></div>`)[0];
+//             popup_fad21262f316485e9fcf1609c4ecea9c.setContent(html_505d9c7f687f403984d7c14f4d5eb6b5);
         
 
-        circle_marker_f8e303feedaf4288b7b77bc823b3c52c.bindPopup(popup_fad21262f316485e9fcf1609c4ecea9c)
-        ;
+//         circle_marker_f8e303feedaf4288b7b77bc823b3c52c.bindPopup(popup_fad21262f316485e9fcf1609c4ecea9c)
+//         ;
 
         
     
     
-            var circle_marker_d8a321c96ae24a42a51b20602d294dce = L.circleMarker(
-                [-18.48, 30.42],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_d8a321c96ae24a42a51b20602d294dce = L.circleMarker(
+//                 [-18.48, 30.42],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_1b43353619064a41a4c3d85dd3213064 = L.popup({"maxWidth": "100%"});
+//         var popup_1b43353619064a41a4c3d85dd3213064 = L.popup({"maxWidth": "100%"});
 
         
-            var html_8e82d229476b48e9aa120bb0ce50b42b = $(`<div id="html_8e82d229476b48e9aa120bb0ce50b42b" style="width: 100.0%; height: 100.0%;">City: Harare<br> Average Temperature: 22.16 C<br></div>`)[0];
-            popup_1b43353619064a41a4c3d85dd3213064.setContent(html_8e82d229476b48e9aa120bb0ce50b42b);
+//             var html_8e82d229476b48e9aa120bb0ce50b42b = $(`<div id="html_8e82d229476b48e9aa120bb0ce50b42b" style="width: 100.0%; height: 100.0%;">City: Harare<br> Average Temperature: 22.16 C<br></div>`)[0];
+//             popup_1b43353619064a41a4c3d85dd3213064.setContent(html_8e82d229476b48e9aa120bb0ce50b42b);
         
 
-        circle_marker_d8a321c96ae24a42a51b20602d294dce.bindPopup(popup_1b43353619064a41a4c3d85dd3213064)
-        ;
+//         circle_marker_d8a321c96ae24a42a51b20602d294dce.bindPopup(popup_1b43353619064a41a4c3d85dd3213064)
+//         ;
 
         
     
     
-            var circle_marker_11fb3441a54e4fd9bfea7316e214f3f5 = L.circleMarker(
-                [45.81, 125.77],
-                {"bubblingMouseEvents": true, "color": "#4393c3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4393c3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_11fb3441a54e4fd9bfea7316e214f3f5 = L.circleMarker(
+//                 [45.81, 125.77],
+//                 {"bubblingMouseEvents": true, "color": "#4393c3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4393c3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_3906e7c78017422b9c9368425799cf36 = L.popup({"maxWidth": "100%"});
+//         var popup_3906e7c78017422b9c9368425799cf36 = L.popup({"maxWidth": "100%"});
 
         
-            var html_ffe562cc88c34003becf6fec07ef5c22 = $(`<div id="html_ffe562cc88c34003becf6fec07ef5c22" style="width: 100.0%; height: 100.0%;">City: Harbin<br> Average Temperature: -17.81 C<br></div>`)[0];
-            popup_3906e7c78017422b9c9368425799cf36.setContent(html_ffe562cc88c34003becf6fec07ef5c22);
+//             var html_ffe562cc88c34003becf6fec07ef5c22 = $(`<div id="html_ffe562cc88c34003becf6fec07ef5c22" style="width: 100.0%; height: 100.0%;">City: Harbin<br> Average Temperature: -17.81 C<br></div>`)[0];
+//             popup_3906e7c78017422b9c9368425799cf36.setContent(html_ffe562cc88c34003becf6fec07ef5c22);
         
 
-        circle_marker_11fb3441a54e4fd9bfea7316e214f3f5.bindPopup(popup_3906e7c78017422b9c9368425799cf36)
-        ;
+//         circle_marker_11fb3441a54e4fd9bfea7316e214f3f5.bindPopup(popup_3906e7c78017422b9c9368425799cf36)
+//         ;
 
         
     
     
-            var circle_marker_fa29a47914f84349a2ecf650d2a7692b = L.circleMarker(
-                [10.45, 107.18],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_fa29a47914f84349a2ecf650d2a7692b = L.circleMarker(
+//                 [10.45, 107.18],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_ba0e3129059d46caaa465b7bc2a13985 = L.popup({"maxWidth": "100%"});
+//         var popup_ba0e3129059d46caaa465b7bc2a13985 = L.popup({"maxWidth": "100%"});
 
         
-            var html_7106b74d9bf64233aac1eaaacc47e7bd = $(`<div id="html_7106b74d9bf64233aac1eaaacc47e7bd" style="width: 100.0%; height: 100.0%;">City: Ho Chi Minh City<br> Average Temperature: 26.06 C<br></div>`)[0];
-            popup_ba0e3129059d46caaa465b7bc2a13985.setContent(html_7106b74d9bf64233aac1eaaacc47e7bd);
+//             var html_7106b74d9bf64233aac1eaaacc47e7bd = $(`<div id="html_7106b74d9bf64233aac1eaaacc47e7bd" style="width: 100.0%; height: 100.0%;">City: Ho Chi Minh City<br> Average Temperature: 26.06 C<br></div>`)[0];
+//             popup_ba0e3129059d46caaa465b7bc2a13985.setContent(html_7106b74d9bf64233aac1eaaacc47e7bd);
         
 
-        circle_marker_fa29a47914f84349a2ecf650d2a7692b.bindPopup(popup_ba0e3129059d46caaa465b7bc2a13985)
-        ;
+//         circle_marker_fa29a47914f84349a2ecf650d2a7692b.bindPopup(popup_ba0e3129059d46caaa465b7bc2a13985)
+//         ;
 
         
     
     
-            var circle_marker_97b28f3776e64549bf7cbabe364bd06f = L.circleMarker(
-                [16.87, 78.7],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_97b28f3776e64549bf7cbabe364bd06f = L.circleMarker(
+//                 [16.87, 78.7],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_398c44b00207436bbb34aef34e4c3235 = L.popup({"maxWidth": "100%"});
+//         var popup_398c44b00207436bbb34aef34e4c3235 = L.popup({"maxWidth": "100%"});
 
         
-            var html_0ea8240149ba4be59080c62a215ade67 = $(`<div id="html_0ea8240149ba4be59080c62a215ade67" style="width: 100.0%; height: 100.0%;">City: Hyderabad<br> Average Temperature: 23.38 C<br></div>`)[0];
-            popup_398c44b00207436bbb34aef34e4c3235.setContent(html_0ea8240149ba4be59080c62a215ade67);
+//             var html_0ea8240149ba4be59080c62a215ade67 = $(`<div id="html_0ea8240149ba4be59080c62a215ade67" style="width: 100.0%; height: 100.0%;">City: Hyderabad<br> Average Temperature: 23.38 C<br></div>`)[0];
+//             popup_398c44b00207436bbb34aef34e4c3235.setContent(html_0ea8240149ba4be59080c62a215ade67);
         
 
-        circle_marker_97b28f3776e64549bf7cbabe364bd06f.bindPopup(popup_398c44b00207436bbb34aef34e4c3235)
-        ;
+//         circle_marker_97b28f3776e64549bf7cbabe364bd06f.bindPopup(popup_398c44b00207436bbb34aef34e4c3235)
+//         ;
 
         
     
     
-            var circle_marker_cd28dd781fe9400996326c34f27c46e6 = L.circleMarker(
-                [7.23, 4.05],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_cd28dd781fe9400996326c34f27c46e6 = L.circleMarker(
+//                 [7.23, 4.05],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_462e1abd3ae84508ac1afea5fcafe74f = L.popup({"maxWidth": "100%"});
+//         var popup_462e1abd3ae84508ac1afea5fcafe74f = L.popup({"maxWidth": "100%"});
 
         
-            var html_f99eba9444574338a52507ab7b3db2ad = $(`<div id="html_f99eba9444574338a52507ab7b3db2ad" style="width: 100.0%; height: 100.0%;">City: Ibadan<br> Average Temperature: 26.7 C<br></div>`)[0];
-            popup_462e1abd3ae84508ac1afea5fcafe74f.setContent(html_f99eba9444574338a52507ab7b3db2ad);
+//             var html_f99eba9444574338a52507ab7b3db2ad = $(`<div id="html_f99eba9444574338a52507ab7b3db2ad" style="width: 100.0%; height: 100.0%;">City: Ibadan<br> Average Temperature: 26.7 C<br></div>`)[0];
+//             popup_462e1abd3ae84508ac1afea5fcafe74f.setContent(html_f99eba9444574338a52507ab7b3db2ad);
         
 
-        circle_marker_cd28dd781fe9400996326c34f27c46e6.bindPopup(popup_462e1abd3ae84508ac1afea5fcafe74f)
-        ;
+//         circle_marker_cd28dd781fe9400996326c34f27c46e6.bindPopup(popup_462e1abd3ae84508ac1afea5fcafe74f)
+//         ;
 
         
     
     
-            var circle_marker_ec6bbd66396e4683bcc31d3f01a98d98 = L.circleMarker(
-                [40.99, 29.82],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_ec6bbd66396e4683bcc31d3f01a98d98 = L.circleMarker(
+//                 [40.99, 29.82],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_5069c88a862d4c57a381588b36f415e0 = L.popup({"maxWidth": "100%"});
+//         var popup_5069c88a862d4c57a381588b36f415e0 = L.popup({"maxWidth": "100%"});
 
         
-            var html_9cd15a8b32574c90966e0a89da198160 = $(`<div id="html_9cd15a8b32574c90966e0a89da198160" style="width: 100.0%; height: 100.0%;">City: Istanbul<br> Average Temperature: 3.54 C<br></div>`)[0];
-            popup_5069c88a862d4c57a381588b36f415e0.setContent(html_9cd15a8b32574c90966e0a89da198160);
+//             var html_9cd15a8b32574c90966e0a89da198160 = $(`<div id="html_9cd15a8b32574c90966e0a89da198160" style="width: 100.0%; height: 100.0%;">City: Istanbul<br> Average Temperature: 3.54 C<br></div>`)[0];
+//             popup_5069c88a862d4c57a381588b36f415e0.setContent(html_9cd15a8b32574c90966e0a89da198160);
         
 
-        circle_marker_ec6bbd66396e4683bcc31d3f01a98d98.bindPopup(popup_5069c88a862d4c57a381588b36f415e0)
-        ;
+//         circle_marker_ec6bbd66396e4683bcc31d3f01a98d98.bindPopup(popup_5069c88a862d4c57a381588b36f415e0)
+//         ;
 
         
     
     
-            var circle_marker_fa6ebc7360974149aa870c6445661a00 = L.circleMarker(
-                [37.78, 26.44],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_fa6ebc7360974149aa870c6445661a00 = L.circleMarker(
+//                 [37.78, 26.44],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_aa06b5bc649446a6b8f608b8bb98dcd5 = L.popup({"maxWidth": "100%"});
+//         var popup_aa06b5bc649446a6b8f608b8bb98dcd5 = L.popup({"maxWidth": "100%"});
 
         
-            var html_7ede85aba47640ca8642c84d64fbd288 = $(`<div id="html_7ede85aba47640ca8642c84d64fbd288" style="width: 100.0%; height: 100.0%;">City: Izmir<br> Average Temperature: 9.45 C<br></div>`)[0];
-            popup_aa06b5bc649446a6b8f608b8bb98dcd5.setContent(html_7ede85aba47640ca8642c84d64fbd288);
+//             var html_7ede85aba47640ca8642c84d64fbd288 = $(`<div id="html_7ede85aba47640ca8642c84d64fbd288" style="width: 100.0%; height: 100.0%;">City: Izmir<br> Average Temperature: 9.45 C<br></div>`)[0];
+//             popup_aa06b5bc649446a6b8f608b8bb98dcd5.setContent(html_7ede85aba47640ca8642c84d64fbd288);
         
 
-        circle_marker_fa6ebc7360974149aa870c6445661a00.bindPopup(popup_aa06b5bc649446a6b8f608b8bb98dcd5)
-        ;
+//         circle_marker_fa6ebc7360974149aa870c6445661a00.bindPopup(popup_aa06b5bc649446a6b8f608b8bb98dcd5)
+//         ;
 
         
     
     
-            var circle_marker_297b04486e5d45d2b61b8340904ba6f6 = L.circleMarker(
-                [26.52, 75.22],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_297b04486e5d45d2b61b8340904ba6f6 = L.circleMarker(
+//                 [26.52, 75.22],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_9b896e9fc6744e37b906d83620ea9e32 = L.popup({"maxWidth": "100%"});
+//         var popup_9b896e9fc6744e37b906d83620ea9e32 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d69ad2543b4c40f68e46431376583fd9 = $(`<div id="html_d69ad2543b4c40f68e46431376583fd9" style="width: 100.0%; height: 100.0%;">City: Jaipur<br> Average Temperature: 16.65 C<br></div>`)[0];
-            popup_9b896e9fc6744e37b906d83620ea9e32.setContent(html_d69ad2543b4c40f68e46431376583fd9);
+//             var html_d69ad2543b4c40f68e46431376583fd9 = $(`<div id="html_d69ad2543b4c40f68e46431376583fd9" style="width: 100.0%; height: 100.0%;">City: Jaipur<br> Average Temperature: 16.65 C<br></div>`)[0];
+//             popup_9b896e9fc6744e37b906d83620ea9e32.setContent(html_d69ad2543b4c40f68e46431376583fd9);
         
 
-        circle_marker_297b04486e5d45d2b61b8340904ba6f6.bindPopup(popup_9b896e9fc6744e37b906d83620ea9e32)
-        ;
+//         circle_marker_297b04486e5d45d2b61b8340904ba6f6.bindPopup(popup_9b896e9fc6744e37b906d83620ea9e32)
+//         ;
 
         
     
     
-            var circle_marker_6a33f14ebbcc449f9045394e16f4e303 = L.circleMarker(
-                [-5.63, 106.55],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_6a33f14ebbcc449f9045394e16f4e303 = L.circleMarker(
+//                 [-5.63, 106.55],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_3faae6fe8bb34208b4ca88bbc4e8760d = L.popup({"maxWidth": "100%"});
+//         var popup_3faae6fe8bb34208b4ca88bbc4e8760d = L.popup({"maxWidth": "100%"});
 
         
-            var html_8fb9b55bc43f47bd9805d0a4cf63161a = $(`<div id="html_8fb9b55bc43f47bd9805d0a4cf63161a" style="width: 100.0%; height: 100.0%;">City: Jakarta<br> Average Temperature: 26.6 C<br></div>`)[0];
-            popup_3faae6fe8bb34208b4ca88bbc4e8760d.setContent(html_8fb9b55bc43f47bd9805d0a4cf63161a);
+//             var html_8fb9b55bc43f47bd9805d0a4cf63161a = $(`<div id="html_8fb9b55bc43f47bd9805d0a4cf63161a" style="width: 100.0%; height: 100.0%;">City: Jakarta<br> Average Temperature: 26.6 C<br></div>`)[0];
+//             popup_3faae6fe8bb34208b4ca88bbc4e8760d.setContent(html_8fb9b55bc43f47bd9805d0a4cf63161a);
         
 
-        circle_marker_6a33f14ebbcc449f9045394e16f4e303.bindPopup(popup_3faae6fe8bb34208b4ca88bbc4e8760d)
-        ;
+//         circle_marker_6a33f14ebbcc449f9045394e16f4e303.bindPopup(popup_3faae6fe8bb34208b4ca88bbc4e8760d)
+//         ;
 
         
     
     
-            var circle_marker_5daf9288f34347f39edce614aacf1e29 = L.circleMarker(
-                [21.7, 38.94],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_5daf9288f34347f39edce614aacf1e29 = L.circleMarker(
+//                 [21.7, 38.94],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_bb2aeb625d5445149418d8b91cd61800 = L.popup({"maxWidth": "100%"});
+//         var popup_bb2aeb625d5445149418d8b91cd61800 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d1ee561d6101483490f9072e4829ebd2 = $(`<div id="html_d1ee561d6101483490f9072e4829ebd2" style="width: 100.0%; height: 100.0%;">City: Jiddah<br> Average Temperature: 22.9 C<br></div>`)[0];
-            popup_bb2aeb625d5445149418d8b91cd61800.setContent(html_d1ee561d6101483490f9072e4829ebd2);
+//             var html_d1ee561d6101483490f9072e4829ebd2 = $(`<div id="html_d1ee561d6101483490f9072e4829ebd2" style="width: 100.0%; height: 100.0%;">City: Jiddah<br> Average Temperature: 22.9 C<br></div>`)[0];
+//             popup_bb2aeb625d5445149418d8b91cd61800.setContent(html_d1ee561d6101483490f9072e4829ebd2);
         
 
-        circle_marker_5daf9288f34347f39edce614aacf1e29.bindPopup(popup_bb2aeb625d5445149418d8b91cd61800)
-        ;
+//         circle_marker_5daf9288f34347f39edce614aacf1e29.bindPopup(popup_bb2aeb625d5445149418d8b91cd61800)
+//         ;
 
         
     
     
-            var circle_marker_14e8b96734794761b1ab1a85f7f933a2 = L.circleMarker(
-                [36.17, 117.35],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_14e8b96734794761b1ab1a85f7f933a2 = L.circleMarker(
+//                 [36.17, 117.35],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_678f35923055431ca36c8071e3a450a6 = L.popup({"maxWidth": "100%"});
+//         var popup_678f35923055431ca36c8071e3a450a6 = L.popup({"maxWidth": "100%"});
 
         
-            var html_1c9da14bf8ee424090fc38375eb0e5bd = $(`<div id="html_1c9da14bf8ee424090fc38375eb0e5bd" style="width: 100.0%; height: 100.0%;">City: Jinan<br> Average Temperature: -1.92 C<br></div>`)[0];
-            popup_678f35923055431ca36c8071e3a450a6.setContent(html_1c9da14bf8ee424090fc38375eb0e5bd);
+//             var html_1c9da14bf8ee424090fc38375eb0e5bd = $(`<div id="html_1c9da14bf8ee424090fc38375eb0e5bd" style="width: 100.0%; height: 100.0%;">City: Jinan<br> Average Temperature: -1.92 C<br></div>`)[0];
+//             popup_678f35923055431ca36c8071e3a450a6.setContent(html_1c9da14bf8ee424090fc38375eb0e5bd);
         
 
-        circle_marker_14e8b96734794761b1ab1a85f7f933a2.bindPopup(popup_678f35923055431ca36c8071e3a450a6)
-        ;
+//         circle_marker_14e8b96734794761b1ab1a85f7f933a2.bindPopup(popup_678f35923055431ca36c8071e3a450a6)
+//         ;
 
         
     
     
-            var circle_marker_54eafdff5a9546fea6e61b9f6ac8a631 = L.circleMarker(
-                [34.56, 70.05],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_54eafdff5a9546fea6e61b9f6ac8a631 = L.circleMarker(
+//                 [34.56, 70.05],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_900601f658db4d6c9aca2a69608f692d = L.popup({"maxWidth": "100%"});
+//         var popup_900601f658db4d6c9aca2a69608f692d = L.popup({"maxWidth": "100%"});
 
         
-            var html_f0bc79a8a5f94489a368b89c60a11564 = $(`<div id="html_f0bc79a8a5f94489a368b89c60a11564" style="width: 100.0%; height: 100.0%;">City: Kabul<br> Average Temperature: 2.03 C<br></div>`)[0];
-            popup_900601f658db4d6c9aca2a69608f692d.setContent(html_f0bc79a8a5f94489a368b89c60a11564);
+//             var html_f0bc79a8a5f94489a368b89c60a11564 = $(`<div id="html_f0bc79a8a5f94489a368b89c60a11564" style="width: 100.0%; height: 100.0%;">City: Kabul<br> Average Temperature: 2.03 C<br></div>`)[0];
+//             popup_900601f658db4d6c9aca2a69608f692d.setContent(html_f0bc79a8a5f94489a368b89c60a11564);
         
 
-        circle_marker_54eafdff5a9546fea6e61b9f6ac8a631.bindPopup(popup_900601f658db4d6c9aca2a69608f692d)
-        ;
+//         circle_marker_54eafdff5a9546fea6e61b9f6ac8a631.bindPopup(popup_900601f658db4d6c9aca2a69608f692d)
+//         ;
 
         
     
     
-            var circle_marker_63c9156708624e61a44fde66fcd880a4 = L.circleMarker(
-                [12.05, 8.22],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_63c9156708624e61a44fde66fcd880a4 = L.circleMarker(
+//                 [12.05, 8.22],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_0594784bf6de41dd8bdea7d01839b7dc = L.popup({"maxWidth": "100%"});
+//         var popup_0594784bf6de41dd8bdea7d01839b7dc = L.popup({"maxWidth": "100%"});
 
         
-            var html_099dfa6f5c71473190db72489bb403f1 = $(`<div id="html_099dfa6f5c71473190db72489bb403f1" style="width: 100.0%; height: 100.0%;">City: Kano<br> Average Temperature: 19.77 C<br></div>`)[0];
-            popup_0594784bf6de41dd8bdea7d01839b7dc.setContent(html_099dfa6f5c71473190db72489bb403f1);
+//             var html_099dfa6f5c71473190db72489bb403f1 = $(`<div id="html_099dfa6f5c71473190db72489bb403f1" style="width: 100.0%; height: 100.0%;">City: Kano<br> Average Temperature: 19.77 C<br></div>`)[0];
+//             popup_0594784bf6de41dd8bdea7d01839b7dc.setContent(html_099dfa6f5c71473190db72489bb403f1);
         
 
-        circle_marker_63c9156708624e61a44fde66fcd880a4.bindPopup(popup_0594784bf6de41dd8bdea7d01839b7dc)
-        ;
+//         circle_marker_63c9156708624e61a44fde66fcd880a4.bindPopup(popup_0594784bf6de41dd8bdea7d01839b7dc)
+//         ;
 
         
     
     
-            var circle_marker_bf15e41399ea419faab0d15abbbd5dcd = L.circleMarker(
-                [26.52, 80.6],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_bf15e41399ea419faab0d15abbbd5dcd = L.circleMarker(
+//                 [26.52, 80.6],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_deaad81e16a44a12aada98545530bc29 = L.popup({"maxWidth": "100%"});
+//         var popup_deaad81e16a44a12aada98545530bc29 = L.popup({"maxWidth": "100%"});
 
         
-            var html_55aa1510f397462bbc0ac0254cc882f2 = $(`<div id="html_55aa1510f397462bbc0ac0254cc882f2" style="width: 100.0%; height: 100.0%;">City: Kanpur<br> Average Temperature: 15.15 C<br></div>`)[0];
-            popup_deaad81e16a44a12aada98545530bc29.setContent(html_55aa1510f397462bbc0ac0254cc882f2);
+//             var html_55aa1510f397462bbc0ac0254cc882f2 = $(`<div id="html_55aa1510f397462bbc0ac0254cc882f2" style="width: 100.0%; height: 100.0%;">City: Kanpur<br> Average Temperature: 15.15 C<br></div>`)[0];
+//             popup_deaad81e16a44a12aada98545530bc29.setContent(html_55aa1510f397462bbc0ac0254cc882f2);
         
 
-        circle_marker_bf15e41399ea419faab0d15abbbd5dcd.bindPopup(popup_deaad81e16a44a12aada98545530bc29)
-        ;
+//         circle_marker_bf15e41399ea419faab0d15abbbd5dcd.bindPopup(popup_deaad81e16a44a12aada98545530bc29)
+//         ;
 
         
     
     
-            var circle_marker_37172a86faba4a3b85233d8b17a5808d = L.circleMarker(
-                [24.92, 67.39],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_37172a86faba4a3b85233d8b17a5808d = L.circleMarker(
+//                 [24.92, 67.39],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_42f37757d21446eab4166f3484412a7a = L.popup({"maxWidth": "100%"});
+//         var popup_42f37757d21446eab4166f3484412a7a = L.popup({"maxWidth": "100%"});
 
         
-            var html_823124fddc2546c49f9afe5426971584 = $(`<div id="html_823124fddc2546c49f9afe5426971584" style="width: 100.0%; height: 100.0%;">City: Karachi<br> Average Temperature: 19.31 C<br></div>`)[0];
-            popup_42f37757d21446eab4166f3484412a7a.setContent(html_823124fddc2546c49f9afe5426971584);
+//             var html_823124fddc2546c49f9afe5426971584 = $(`<div id="html_823124fddc2546c49f9afe5426971584" style="width: 100.0%; height: 100.0%;">City: Karachi<br> Average Temperature: 19.31 C<br></div>`)[0];
+//             popup_42f37757d21446eab4166f3484412a7a.setContent(html_823124fddc2546c49f9afe5426971584);
         
 
-        circle_marker_37172a86faba4a3b85233d8b17a5808d.bindPopup(popup_42f37757d21446eab4166f3484412a7a)
-        ;
+//         circle_marker_37172a86faba4a3b85233d8b17a5808d.bindPopup(popup_42f37757d21446eab4166f3484412a7a)
+//         ;
 
         
     
     
-            var circle_marker_352a082319a447ce8fe587b18aeff34f = L.circleMarker(
-                [50.63, 31.69],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_352a082319a447ce8fe587b18aeff34f = L.circleMarker(
+//                 [50.63, 31.69],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_311600c9e1004cf1b81005e4d7aae209 = L.popup({"maxWidth": "100%"});
+//         var popup_311600c9e1004cf1b81005e4d7aae209 = L.popup({"maxWidth": "100%"});
 
         
-            var html_91c4c3ba3e64442793e4c209543e7198 = $(`<div id="html_91c4c3ba3e64442793e4c209543e7198" style="width: 100.0%; height: 100.0%;">City: Kiev<br> Average Temperature: -2.04 C<br></div>`)[0];
-            popup_311600c9e1004cf1b81005e4d7aae209.setContent(html_91c4c3ba3e64442793e4c209543e7198);
+//             var html_91c4c3ba3e64442793e4c209543e7198 = $(`<div id="html_91c4c3ba3e64442793e4c209543e7198" style="width: 100.0%; height: 100.0%;">City: Kiev<br> Average Temperature: -2.04 C<br></div>`)[0];
+//             popup_311600c9e1004cf1b81005e4d7aae209.setContent(html_91c4c3ba3e64442793e4c209543e7198);
         
 
-        circle_marker_352a082319a447ce8fe587b18aeff34f.bindPopup(popup_311600c9e1004cf1b81005e4d7aae209)
-        ;
+//         circle_marker_352a082319a447ce8fe587b18aeff34f.bindPopup(popup_311600c9e1004cf1b81005e4d7aae209)
+//         ;
 
         
     
     
-            var circle_marker_8d9afe8b312f4bf4ae3cf96ded80d5d6 = L.circleMarker(
-                [-4.02, 15.27],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_8d9afe8b312f4bf4ae3cf96ded80d5d6 = L.circleMarker(
+//                 [-4.02, 15.27],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_db4bcea61b3e49bb84f89e657c64629d = L.popup({"maxWidth": "100%"});
+//         var popup_db4bcea61b3e49bb84f89e657c64629d = L.popup({"maxWidth": "100%"});
 
         
-            var html_9ff68f3642024daa8e17f1eeab2fcbf2 = $(`<div id="html_9ff68f3642024daa8e17f1eeab2fcbf2" style="width: 100.0%; height: 100.0%;">City: Kinshasa<br> Average Temperature: 24.58 C<br></div>`)[0];
-            popup_db4bcea61b3e49bb84f89e657c64629d.setContent(html_9ff68f3642024daa8e17f1eeab2fcbf2);
+//             var html_9ff68f3642024daa8e17f1eeab2fcbf2 = $(`<div id="html_9ff68f3642024daa8e17f1eeab2fcbf2" style="width: 100.0%; height: 100.0%;">City: Kinshasa<br> Average Temperature: 24.58 C<br></div>`)[0];
+//             popup_db4bcea61b3e49bb84f89e657c64629d.setContent(html_9ff68f3642024daa8e17f1eeab2fcbf2);
         
 
-        circle_marker_8d9afe8b312f4bf4ae3cf96ded80d5d6.bindPopup(popup_db4bcea61b3e49bb84f89e657c64629d)
-        ;
+//         circle_marker_8d9afe8b312f4bf4ae3cf96ded80d5d6.bindPopup(popup_db4bcea61b3e49bb84f89e657c64629d)
+//         ;
 
         
     
     
-            var circle_marker_55be18d803b44f4b9b5833c34800c01d = L.circleMarker(
-                [5.63, 3.23],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_55be18d803b44f4b9b5833c34800c01d = L.circleMarker(
+//                 [5.63, 3.23],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_760a0656fec1464aa366c8612b3e7d17 = L.popup({"maxWidth": "100%"});
+//         var popup_760a0656fec1464aa366c8612b3e7d17 = L.popup({"maxWidth": "100%"});
 
         
-            var html_611191f9b9e742c8a74e08382abc3c98 = $(`<div id="html_611191f9b9e742c8a74e08382abc3c98" style="width: 100.0%; height: 100.0%;">City: Lagos<br> Average Temperature: 26.21 C<br></div>`)[0];
-            popup_760a0656fec1464aa366c8612b3e7d17.setContent(html_611191f9b9e742c8a74e08382abc3c98);
+//             var html_611191f9b9e742c8a74e08382abc3c98 = $(`<div id="html_611191f9b9e742c8a74e08382abc3c98" style="width: 100.0%; height: 100.0%;">City: Lagos<br> Average Temperature: 26.21 C<br></div>`)[0];
+//             popup_760a0656fec1464aa366c8612b3e7d17.setContent(html_611191f9b9e742c8a74e08382abc3c98);
         
 
-        circle_marker_55be18d803b44f4b9b5833c34800c01d.bindPopup(popup_760a0656fec1464aa366c8612b3e7d17)
-        ;
+//         circle_marker_55be18d803b44f4b9b5833c34800c01d.bindPopup(popup_760a0656fec1464aa366c8612b3e7d17)
+//         ;
 
         
     
     
-            var circle_marker_0ec613a1113a420989cf0fad87a52a68 = L.circleMarker(
-                [31.35, 73.51],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_0ec613a1113a420989cf0fad87a52a68 = L.circleMarker(
+//                 [31.35, 73.51],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_ea23d2d0c25547e28a34d6b7a12d5760 = L.popup({"maxWidth": "100%"});
+//         var popup_ea23d2d0c25547e28a34d6b7a12d5760 = L.popup({"maxWidth": "100%"});
 
         
-            var html_aef1698570fa4a0bb1117a8105236881 = $(`<div id="html_aef1698570fa4a0bb1117a8105236881" style="width: 100.0%; height: 100.0%;">City: Lahore<br> Average Temperature: 12.31 C<br></div>`)[0];
-            popup_ea23d2d0c25547e28a34d6b7a12d5760.setContent(html_aef1698570fa4a0bb1117a8105236881);
+//             var html_aef1698570fa4a0bb1117a8105236881 = $(`<div id="html_aef1698570fa4a0bb1117a8105236881" style="width: 100.0%; height: 100.0%;">City: Lahore<br> Average Temperature: 12.31 C<br></div>`)[0];
+//             popup_ea23d2d0c25547e28a34d6b7a12d5760.setContent(html_aef1698570fa4a0bb1117a8105236881);
         
 
-        circle_marker_0ec613a1113a420989cf0fad87a52a68.bindPopup(popup_ea23d2d0c25547e28a34d6b7a12d5760)
-        ;
+//         circle_marker_0ec613a1113a420989cf0fad87a52a68.bindPopup(popup_ea23d2d0c25547e28a34d6b7a12d5760)
+//         ;
 
         
     
     
-            var circle_marker_9802c632fd8b4bc19c892e919d7c1029 = L.circleMarker(
-                [26.52, 80.6],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_9802c632fd8b4bc19c892e919d7c1029 = L.circleMarker(
+//                 [26.52, 80.6],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_d79bfdb36cf547e89987801633566be9 = L.popup({"maxWidth": "100%"});
+//         var popup_d79bfdb36cf547e89987801633566be9 = L.popup({"maxWidth": "100%"});
 
         
-            var html_13346c910b884edab27049e9e3f78e52 = $(`<div id="html_13346c910b884edab27049e9e3f78e52" style="width: 100.0%; height: 100.0%;">City: Lakhnau<br> Average Temperature: 15.15 C<br></div>`)[0];
-            popup_d79bfdb36cf547e89987801633566be9.setContent(html_13346c910b884edab27049e9e3f78e52);
+//             var html_13346c910b884edab27049e9e3f78e52 = $(`<div id="html_13346c910b884edab27049e9e3f78e52" style="width: 100.0%; height: 100.0%;">City: Lakhnau<br> Average Temperature: 15.15 C<br></div>`)[0];
+//             popup_d79bfdb36cf547e89987801633566be9.setContent(html_13346c910b884edab27049e9e3f78e52);
         
 
-        circle_marker_9802c632fd8b4bc19c892e919d7c1029.bindPopup(popup_d79bfdb36cf547e89987801633566be9)
-        ;
+//         circle_marker_9802c632fd8b4bc19c892e919d7c1029.bindPopup(popup_d79bfdb36cf547e89987801633566be9)
+//         ;
 
         
     
     
-            var circle_marker_faebb34e94364f5aa2290640bb80c8a1 = L.circleMarker(
-                [-12.05, -77.26],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_faebb34e94364f5aa2290640bb80c8a1 = L.circleMarker(
+//                 [-12.05, -77.26],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_5e0ed9e00e484cf6a71efd0d71e9b074 = L.popup({"maxWidth": "100%"});
+//         var popup_5e0ed9e00e484cf6a71efd0d71e9b074 = L.popup({"maxWidth": "100%"});
 
         
-            var html_5e6abd7845134a52a093cc10d7e1b551 = $(`<div id="html_5e6abd7845134a52a093cc10d7e1b551" style="width: 100.0%; height: 100.0%;">City: Lima<br> Average Temperature: 19.67 C<br></div>`)[0];
-            popup_5e0ed9e00e484cf6a71efd0d71e9b074.setContent(html_5e6abd7845134a52a093cc10d7e1b551);
+//             var html_5e6abd7845134a52a093cc10d7e1b551 = $(`<div id="html_5e6abd7845134a52a093cc10d7e1b551" style="width: 100.0%; height: 100.0%;">City: Lima<br> Average Temperature: 19.67 C<br></div>`)[0];
+//             popup_5e0ed9e00e484cf6a71efd0d71e9b074.setContent(html_5e6abd7845134a52a093cc10d7e1b551);
         
 
-        circle_marker_faebb34e94364f5aa2290640bb80c8a1.bindPopup(popup_5e0ed9e00e484cf6a71efd0d71e9b074)
-        ;
+//         circle_marker_faebb34e94364f5aa2290640bb80c8a1.bindPopup(popup_5e0ed9e00e484cf6a71efd0d71e9b074)
+//         ;
 
         
     
     
-            var circle_marker_510b0af3985e42b6bde320e0c9b6ee4b = L.circleMarker(
-                [52.24, -0.0],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_510b0af3985e42b6bde320e0c9b6ee4b = L.circleMarker(
+//                 [52.24, -0.0],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_9307caff762e4e339afe9a72d109bf15 = L.popup({"maxWidth": "100%"});
+//         var popup_9307caff762e4e339afe9a72d109bf15 = L.popup({"maxWidth": "100%"});
 
         
-            var html_40dc926f3e5648afbe9c04761b0534f1 = $(`<div id="html_40dc926f3e5648afbe9c04761b0534f1" style="width: 100.0%; height: 100.0%;">City: London<br> Average Temperature: 5.72 C<br></div>`)[0];
-            popup_9307caff762e4e339afe9a72d109bf15.setContent(html_40dc926f3e5648afbe9c04761b0534f1);
+//             var html_40dc926f3e5648afbe9c04761b0534f1 = $(`<div id="html_40dc926f3e5648afbe9c04761b0534f1" style="width: 100.0%; height: 100.0%;">City: London<br> Average Temperature: 5.72 C<br></div>`)[0];
+//             popup_9307caff762e4e339afe9a72d109bf15.setContent(html_40dc926f3e5648afbe9c04761b0534f1);
         
 
-        circle_marker_510b0af3985e42b6bde320e0c9b6ee4b.bindPopup(popup_9307caff762e4e339afe9a72d109bf15)
-        ;
+//         circle_marker_510b0af3985e42b6bde320e0c9b6ee4b.bindPopup(popup_9307caff762e4e339afe9a72d109bf15)
+//         ;
 
         
     
     
-            var circle_marker_84caece767b745e2a7c649fcd6ad8198 = L.circleMarker(
-                [34.56, -118.7],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_84caece767b745e2a7c649fcd6ad8198 = L.circleMarker(
+//                 [34.56, -118.7],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_3977e88e6c3c4bbc842700f8cb20751d = L.popup({"maxWidth": "100%"});
+//         var popup_3977e88e6c3c4bbc842700f8cb20751d = L.popup({"maxWidth": "100%"});
 
         
-            var html_a270d3bb0a8843c6a976fca3102e3827 = $(`<div id="html_a270d3bb0a8843c6a976fca3102e3827" style="width: 100.0%; height: 100.0%;">City: Los Angeles<br> Average Temperature: 8.57 C<br></div>`)[0];
-            popup_3977e88e6c3c4bbc842700f8cb20751d.setContent(html_a270d3bb0a8843c6a976fca3102e3827);
+//             var html_a270d3bb0a8843c6a976fca3102e3827 = $(`<div id="html_a270d3bb0a8843c6a976fca3102e3827" style="width: 100.0%; height: 100.0%;">City: Los Angeles<br> Average Temperature: 8.57 C<br></div>`)[0];
+//             popup_3977e88e6c3c4bbc842700f8cb20751d.setContent(html_a270d3bb0a8843c6a976fca3102e3827);
         
 
-        circle_marker_84caece767b745e2a7c649fcd6ad8198.bindPopup(popup_3977e88e6c3c4bbc842700f8cb20751d)
-        ;
+//         circle_marker_84caece767b745e2a7c649fcd6ad8198.bindPopup(popup_3977e88e6c3c4bbc842700f8cb20751d)
+//         ;
 
         
     
     
-            var circle_marker_ab3a93c1a1044ccf9de68ebe9bce154d = L.circleMarker(
-                [-8.84, 13.78],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_ab3a93c1a1044ccf9de68ebe9bce154d = L.circleMarker(
+//                 [-8.84, 13.78],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_b9de13aa6027421eb8dcb2af98b85948 = L.popup({"maxWidth": "100%"});
+//         var popup_b9de13aa6027421eb8dcb2af98b85948 = L.popup({"maxWidth": "100%"});
 
         
-            var html_86ff5fb8914a4799b76311bc89f4162b = $(`<div id="html_86ff5fb8914a4799b76311bc89f4162b" style="width: 100.0%; height: 100.0%;">City: Luanda<br> Average Temperature: 25.32 C<br></div>`)[0];
-            popup_b9de13aa6027421eb8dcb2af98b85948.setContent(html_86ff5fb8914a4799b76311bc89f4162b);
+//             var html_86ff5fb8914a4799b76311bc89f4162b = $(`<div id="html_86ff5fb8914a4799b76311bc89f4162b" style="width: 100.0%; height: 100.0%;">City: Luanda<br> Average Temperature: 25.32 C<br></div>`)[0];
+//             popup_b9de13aa6027421eb8dcb2af98b85948.setContent(html_86ff5fb8914a4799b76311bc89f4162b);
         
 
-        circle_marker_ab3a93c1a1044ccf9de68ebe9bce154d.bindPopup(popup_b9de13aa6027421eb8dcb2af98b85948)
-        ;
+//         circle_marker_ab3a93c1a1044ccf9de68ebe9bce154d.bindPopup(popup_b9de13aa6027421eb8dcb2af98b85948)
+//         ;
 
         
     
     
-            var circle_marker_979a956dd66f490a84ca90fba435f1e9 = L.circleMarker(
-                [13.66, 80.09],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_979a956dd66f490a84ca90fba435f1e9 = L.circleMarker(
+//                 [13.66, 80.09],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_3263337bec1f4f12b19762656be6d118 = L.popup({"maxWidth": "100%"});
+//         var popup_3263337bec1f4f12b19762656be6d118 = L.popup({"maxWidth": "100%"});
 
         
-            var html_299a7e21829246adbbfbc440e51e5b08 = $(`<div id="html_299a7e21829246adbbfbc440e51e5b08" style="width: 100.0%; height: 100.0%;">City: Madras<br> Average Temperature: 24.65 C<br></div>`)[0];
-            popup_3263337bec1f4f12b19762656be6d118.setContent(html_299a7e21829246adbbfbc440e51e5b08);
+//             var html_299a7e21829246adbbfbc440e51e5b08 = $(`<div id="html_299a7e21829246adbbfbc440e51e5b08" style="width: 100.0%; height: 100.0%;">City: Madras<br> Average Temperature: 24.65 C<br></div>`)[0];
+//             popup_3263337bec1f4f12b19762656be6d118.setContent(html_299a7e21829246adbbfbc440e51e5b08);
         
 
-        circle_marker_979a956dd66f490a84ca90fba435f1e9.bindPopup(popup_3263337bec1f4f12b19762656be6d118)
-        ;
+//         circle_marker_979a956dd66f490a84ca90fba435f1e9.bindPopup(popup_3263337bec1f4f12b19762656be6d118)
+//         ;
 
         
     
     
-            var circle_marker_4c00575bf40a49b39f76260fa8aed978 = L.circleMarker(
-                [40.99, -4.26],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_4c00575bf40a49b39f76260fa8aed978 = L.circleMarker(
+//                 [40.99, -4.26],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_ac90ff268d514aa38d48ec47413dcc95 = L.popup({"maxWidth": "100%"});
+//         var popup_ac90ff268d514aa38d48ec47413dcc95 = L.popup({"maxWidth": "100%"});
 
         
-            var html_bd1a86e57d1c400db80aa4aad0a4928d = $(`<div id="html_bd1a86e57d1c400db80aa4aad0a4928d" style="width: 100.0%; height: 100.0%;">City: Madrid<br> Average Temperature: 3.27 C<br></div>`)[0];
-            popup_ac90ff268d514aa38d48ec47413dcc95.setContent(html_bd1a86e57d1c400db80aa4aad0a4928d);
+//             var html_bd1a86e57d1c400db80aa4aad0a4928d = $(`<div id="html_bd1a86e57d1c400db80aa4aad0a4928d" style="width: 100.0%; height: 100.0%;">City: Madrid<br> Average Temperature: 3.27 C<br></div>`)[0];
+//             popup_ac90ff268d514aa38d48ec47413dcc95.setContent(html_bd1a86e57d1c400db80aa4aad0a4928d);
         
 
-        circle_marker_4c00575bf40a49b39f76260fa8aed978.bindPopup(popup_ac90ff268d514aa38d48ec47413dcc95)
-        ;
+//         circle_marker_4c00575bf40a49b39f76260fa8aed978.bindPopup(popup_ac90ff268d514aa38d48ec47413dcc95)
+//         ;
 
         
     
     
-            var circle_marker_b2dd95ae77d7498f8d7796b3253e9927 = L.circleMarker(
-                [15.27, 120.83],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_b2dd95ae77d7498f8d7796b3253e9927 = L.circleMarker(
+//                 [15.27, 120.83],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_8aa9f150661d4472982908736e2581f2 = L.popup({"maxWidth": "100%"});
+//         var popup_8aa9f150661d4472982908736e2581f2 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d2bc17269ac24d1094a876e4fa78fdb8 = $(`<div id="html_d2bc17269ac24d1094a876e4fa78fdb8" style="width: 100.0%; height: 100.0%;">City: Manila<br> Average Temperature: 24.82 C<br></div>`)[0];
-            popup_8aa9f150661d4472982908736e2581f2.setContent(html_d2bc17269ac24d1094a876e4fa78fdb8);
+//             var html_d2bc17269ac24d1094a876e4fa78fdb8 = $(`<div id="html_d2bc17269ac24d1094a876e4fa78fdb8" style="width: 100.0%; height: 100.0%;">City: Manila<br> Average Temperature: 24.82 C<br></div>`)[0];
+//             popup_8aa9f150661d4472982908736e2581f2.setContent(html_d2bc17269ac24d1094a876e4fa78fdb8);
         
 
-        circle_marker_b2dd95ae77d7498f8d7796b3253e9927.bindPopup(popup_8aa9f150661d4472982908736e2581f2)
-        ;
+//         circle_marker_b2dd95ae77d7498f8d7796b3253e9927.bindPopup(popup_8aa9f150661d4472982908736e2581f2)
+//         ;
 
         
     
     
-            var circle_marker_8af431025d7b49a5aaddc437b8693cef = L.circleMarker(
-                [36.17, 59.67],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_8af431025d7b49a5aaddc437b8693cef = L.circleMarker(
+//                 [36.17, 59.67],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_ac4237f0385141939910924888f72324 = L.popup({"maxWidth": "100%"});
+//         var popup_ac4237f0385141939910924888f72324 = L.popup({"maxWidth": "100%"});
 
         
-            var html_29ee63334eac410ea86b4887983b209e = $(`<div id="html_29ee63334eac410ea86b4887983b209e" style="width: 100.0%; height: 100.0%;">City: Mashhad<br> Average Temperature: -0.04 C<br></div>`)[0];
-            popup_ac4237f0385141939910924888f72324.setContent(html_29ee63334eac410ea86b4887983b209e);
+//             var html_29ee63334eac410ea86b4887983b209e = $(`<div id="html_29ee63334eac410ea86b4887983b209e" style="width: 100.0%; height: 100.0%;">City: Mashhad<br> Average Temperature: -0.04 C<br></div>`)[0];
+//             popup_ac4237f0385141939910924888f72324.setContent(html_29ee63334eac410ea86b4887983b209e);
         
 
-        circle_marker_8af431025d7b49a5aaddc437b8693cef.bindPopup(popup_ac4237f0385141939910924888f72324)
-        ;
+//         circle_marker_8af431025d7b49a5aaddc437b8693cef.bindPopup(popup_ac4237f0385141939910924888f72324)
+//         ;
 
         
     
     
-            var circle_marker_cd2256e99f11451ba5aa968040612f50 = L.circleMarker(
-                [-37.78, 144.41],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_cd2256e99f11451ba5aa968040612f50 = L.circleMarker(
+//                 [-37.78, 144.41],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_5c1a43132370481faa9b6383dfe37b54 = L.popup({"maxWidth": "100%"});
+//         var popup_5c1a43132370481faa9b6383dfe37b54 = L.popup({"maxWidth": "100%"});
 
         
-            var html_7db47046ee8447d4b1ca93a8c3cb336e = $(`<div id="html_7db47046ee8447d4b1ca93a8c3cb336e" style="width: 100.0%; height: 100.0%;">City: Melbourne<br> Average Temperature: 19.49 C<br></div>`)[0];
-            popup_5c1a43132370481faa9b6383dfe37b54.setContent(html_7db47046ee8447d4b1ca93a8c3cb336e);
+//             var html_7db47046ee8447d4b1ca93a8c3cb336e = $(`<div id="html_7db47046ee8447d4b1ca93a8c3cb336e" style="width: 100.0%; height: 100.0%;">City: Melbourne<br> Average Temperature: 19.49 C<br></div>`)[0];
+//             popup_5c1a43132370481faa9b6383dfe37b54.setContent(html_7db47046ee8447d4b1ca93a8c3cb336e);
         
 
-        circle_marker_cd2256e99f11451ba5aa968040612f50.bindPopup(popup_5c1a43132370481faa9b6383dfe37b54)
-        ;
+//         circle_marker_cd2256e99f11451ba5aa968040612f50.bindPopup(popup_5c1a43132370481faa9b6383dfe37b54)
+//         ;
 
         
     
     
-            var circle_marker_77b88ccbb0544ef38db3cb52b429df8a = L.circleMarker(
-                [20.09, -98.96],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_77b88ccbb0544ef38db3cb52b429df8a = L.circleMarker(
+//                 [20.09, -98.96],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_ac8a4b44110c456d9236f550a535de63 = L.popup({"maxWidth": "100%"});
+//         var popup_ac8a4b44110c456d9236f550a535de63 = L.popup({"maxWidth": "100%"});
 
         
-            var html_dd89d8831a7947cebf183a8b7c63ca56 = $(`<div id="html_dd89d8831a7947cebf183a8b7c63ca56" style="width: 100.0%; height: 100.0%;">City: Mexico<br> Average Temperature: 13.48 C<br></div>`)[0];
-            popup_ac8a4b44110c456d9236f550a535de63.setContent(html_dd89d8831a7947cebf183a8b7c63ca56);
+//             var html_dd89d8831a7947cebf183a8b7c63ca56 = $(`<div id="html_dd89d8831a7947cebf183a8b7c63ca56" style="width: 100.0%; height: 100.0%;">City: Mexico<br> Average Temperature: 13.48 C<br></div>`)[0];
+//             popup_ac8a4b44110c456d9236f550a535de63.setContent(html_dd89d8831a7947cebf183a8b7c63ca56);
         
 
-        circle_marker_77b88ccbb0544ef38db3cb52b429df8a.bindPopup(popup_ac8a4b44110c456d9236f550a535de63)
-        ;
+//         circle_marker_77b88ccbb0544ef38db3cb52b429df8a.bindPopup(popup_ac8a4b44110c456d9236f550a535de63)
+//         ;
 
         
     
     
-            var circle_marker_f5359e213a8a4baeaa31f145980d7dc6 = L.circleMarker(
-                [2.41, 45.8],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_f5359e213a8a4baeaa31f145980d7dc6 = L.circleMarker(
+//                 [2.41, 45.8],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_053f5879b8354fb1aff3a454de220999 = L.popup({"maxWidth": "100%"});
+//         var popup_053f5879b8354fb1aff3a454de220999 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e7e21d5ce92b4f77a90d8424b389b9c8 = $(`<div id="html_e7e21d5ce92b4f77a90d8424b389b9c8" style="width: 100.0%; height: 100.0%;">City: Mogadishu<br> Average Temperature: 26.99 C<br></div>`)[0];
-            popup_053f5879b8354fb1aff3a454de220999.setContent(html_e7e21d5ce92b4f77a90d8424b389b9c8);
+//             var html_e7e21d5ce92b4f77a90d8424b389b9c8 = $(`<div id="html_e7e21d5ce92b4f77a90d8424b389b9c8" style="width: 100.0%; height: 100.0%;">City: Mogadishu<br> Average Temperature: 26.99 C<br></div>`)[0];
+//             popup_053f5879b8354fb1aff3a454de220999.setContent(html_e7e21d5ce92b4f77a90d8424b389b9c8);
         
 
-        circle_marker_f5359e213a8a4baeaa31f145980d7dc6.bindPopup(popup_053f5879b8354fb1aff3a454de220999)
-        ;
+//         circle_marker_f5359e213a8a4baeaa31f145980d7dc6.bindPopup(popup_053f5879b8354fb1aff3a454de220999)
+//         ;
 
         
     
     
-            var circle_marker_d604052426d642adb3c81bbb3cac149a = L.circleMarker(
-                [45.81, -72.69],
-                {"bubblingMouseEvents": true, "color": "#4393c3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4393c3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_d604052426d642adb3c81bbb3cac149a = L.circleMarker(
+//                 [45.81, -72.69],
+//                 {"bubblingMouseEvents": true, "color": "#4393c3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4393c3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_eddca89acf1e4a66828e0749c67d9d92 = L.popup({"maxWidth": "100%"});
+//         var popup_eddca89acf1e4a66828e0749c67d9d92 = L.popup({"maxWidth": "100%"});
 
         
-            var html_cf6c6108ebf6482098f6bf7879424549 = $(`<div id="html_cf6c6108ebf6482098f6bf7879424549" style="width: 100.0%; height: 100.0%;">City: Montreal<br> Average Temperature: -10.88 C<br></div>`)[0];
-            popup_eddca89acf1e4a66828e0749c67d9d92.setContent(html_cf6c6108ebf6482098f6bf7879424549);
+//             var html_cf6c6108ebf6482098f6bf7879424549 = $(`<div id="html_cf6c6108ebf6482098f6bf7879424549" style="width: 100.0%; height: 100.0%;">City: Montreal<br> Average Temperature: -10.88 C<br></div>`)[0];
+//             popup_eddca89acf1e4a66828e0749c67d9d92.setContent(html_cf6c6108ebf6482098f6bf7879424549);
         
 
-        circle_marker_d604052426d642adb3c81bbb3cac149a.bindPopup(popup_eddca89acf1e4a66828e0749c67d9d92)
-        ;
+//         circle_marker_d604052426d642adb3c81bbb3cac149a.bindPopup(popup_eddca89acf1e4a66828e0749c67d9d92)
+//         ;
 
         
     
     
-            var circle_marker_bd0ce8b896e9436b88450368abbe670e = L.circleMarker(
-                [55.45, 36.85],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_bd0ce8b896e9436b88450368abbe670e = L.circleMarker(
+//                 [55.45, 36.85],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_61c2df73400d4bb08e6efd49616c6205 = L.popup({"maxWidth": "100%"});
+//         var popup_61c2df73400d4bb08e6efd49616c6205 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d13289ce33dd482aa4ac8f92e2bf6fe5 = $(`<div id="html_d13289ce33dd482aa4ac8f92e2bf6fe5" style="width: 100.0%; height: 100.0%;">City: Moscow<br> Average Temperature: -5.21 C<br></div>`)[0];
-            popup_61c2df73400d4bb08e6efd49616c6205.setContent(html_d13289ce33dd482aa4ac8f92e2bf6fe5);
+//             var html_d13289ce33dd482aa4ac8f92e2bf6fe5 = $(`<div id="html_d13289ce33dd482aa4ac8f92e2bf6fe5" style="width: 100.0%; height: 100.0%;">City: Moscow<br> Average Temperature: -5.21 C<br></div>`)[0];
+//             popup_61c2df73400d4bb08e6efd49616c6205.setContent(html_d13289ce33dd482aa4ac8f92e2bf6fe5);
         
 
-        circle_marker_bd0ce8b896e9436b88450368abbe670e.bindPopup(popup_61c2df73400d4bb08e6efd49616c6205)
-        ;
+//         circle_marker_bd0ce8b896e9436b88450368abbe670e.bindPopup(popup_61c2df73400d4bb08e6efd49616c6205)
+//         ;
 
         
     
     
-            var circle_marker_30976bd252ef4c7582826c600601b70d = L.circleMarker(
-                [34.56, 136.22],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_30976bd252ef4c7582826c600601b70d = L.circleMarker(
+//                 [34.56, 136.22],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_9f8a063df8c14e969db941b9012b3cd0 = L.popup({"maxWidth": "100%"});
+//         var popup_9f8a063df8c14e969db941b9012b3cd0 = L.popup({"maxWidth": "100%"});
 
         
-            var html_5255a6fbb6f04357827a014bba85bc88 = $(`<div id="html_5255a6fbb6f04357827a014bba85bc88" style="width: 100.0%; height: 100.0%;">City: Nagoya<br> Average Temperature: 5.78 C<br></div>`)[0];
-            popup_9f8a063df8c14e969db941b9012b3cd0.setContent(html_5255a6fbb6f04357827a014bba85bc88);
+//             var html_5255a6fbb6f04357827a014bba85bc88 = $(`<div id="html_5255a6fbb6f04357827a014bba85bc88" style="width: 100.0%; height: 100.0%;">City: Nagoya<br> Average Temperature: 5.78 C<br></div>`)[0];
+//             popup_9f8a063df8c14e969db941b9012b3cd0.setContent(html_5255a6fbb6f04357827a014bba85bc88);
         
 
-        circle_marker_30976bd252ef4c7582826c600601b70d.bindPopup(popup_9f8a063df8c14e969db941b9012b3cd0)
-        ;
+//         circle_marker_30976bd252ef4c7582826c600601b70d.bindPopup(popup_9f8a063df8c14e969db941b9012b3cd0)
+//         ;
 
         
     
     
-            var circle_marker_e1aa22cfe6aa440889e69e4e619c7090 = L.circleMarker(
-                [21.7, 78.75],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_e1aa22cfe6aa440889e69e4e619c7090 = L.circleMarker(
+//                 [21.7, 78.75],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_1fb5fd5cd1514225a7cad8131631c5b6 = L.popup({"maxWidth": "100%"});
+//         var popup_1fb5fd5cd1514225a7cad8131631c5b6 = L.popup({"maxWidth": "100%"});
 
         
-            var html_ab2d156bf6504dac9d869e7cc96fc4e1 = $(`<div id="html_ab2d156bf6504dac9d869e7cc96fc4e1" style="width: 100.0%; height: 100.0%;">City: Nagpur<br> Average Temperature: 20.16 C<br></div>`)[0];
-            popup_1fb5fd5cd1514225a7cad8131631c5b6.setContent(html_ab2d156bf6504dac9d869e7cc96fc4e1);
+//             var html_ab2d156bf6504dac9d869e7cc96fc4e1 = $(`<div id="html_ab2d156bf6504dac9d869e7cc96fc4e1" style="width: 100.0%; height: 100.0%;">City: Nagpur<br> Average Temperature: 20.16 C<br></div>`)[0];
+//             popup_1fb5fd5cd1514225a7cad8131631c5b6.setContent(html_ab2d156bf6504dac9d869e7cc96fc4e1);
         
 
-        circle_marker_e1aa22cfe6aa440889e69e4e619c7090.bindPopup(popup_1fb5fd5cd1514225a7cad8131631c5b6)
-        ;
+//         circle_marker_e1aa22cfe6aa440889e69e4e619c7090.bindPopup(popup_1fb5fd5cd1514225a7cad8131631c5b6)
+//         ;
 
         
     
     
-            var circle_marker_5010a95725fe4ea698d5a7dd68d46606 = L.circleMarker(
-                [-0.8, 36.16],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_5010a95725fe4ea698d5a7dd68d46606 = L.circleMarker(
+//                 [-0.8, 36.16],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_caf0538a19fb42db9936e8eda6140c85 = L.popup({"maxWidth": "100%"});
+//         var popup_caf0538a19fb42db9936e8eda6140c85 = L.popup({"maxWidth": "100%"});
 
         
-            var html_950f1bd01d5f4a0dbb358db7613bc86d = $(`<div id="html_950f1bd01d5f4a0dbb358db7613bc86d" style="width: 100.0%; height: 100.0%;">City: Nairobi<br> Average Temperature: 16.04 C<br></div>`)[0];
-            popup_caf0538a19fb42db9936e8eda6140c85.setContent(html_950f1bd01d5f4a0dbb358db7613bc86d);
+//             var html_950f1bd01d5f4a0dbb358db7613bc86d = $(`<div id="html_950f1bd01d5f4a0dbb358db7613bc86d" style="width: 100.0%; height: 100.0%;">City: Nairobi<br> Average Temperature: 16.04 C<br></div>`)[0];
+//             popup_caf0538a19fb42db9936e8eda6140c85.setContent(html_950f1bd01d5f4a0dbb358db7613bc86d);
         
 
-        circle_marker_5010a95725fe4ea698d5a7dd68d46606.bindPopup(popup_caf0538a19fb42db9936e8eda6140c85)
-        ;
+//         circle_marker_5010a95725fe4ea698d5a7dd68d46606.bindPopup(popup_caf0538a19fb42db9936e8eda6140c85)
+//         ;
 
         
     
     
-            var circle_marker_dedf0c2fdcf043ac8c4151ccbb9b3023 = L.circleMarker(
-                [31.35, 118.74],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_dedf0c2fdcf043ac8c4151ccbb9b3023 = L.circleMarker(
+//                 [31.35, 118.74],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_fc3077df76ae411294e1a78c7ab64ad2 = L.popup({"maxWidth": "100%"});
+//         var popup_fc3077df76ae411294e1a78c7ab64ad2 = L.popup({"maxWidth": "100%"});
 
         
-            var html_13dfbe9c552843469eefcb129da3d3db = $(`<div id="html_13dfbe9c552843469eefcb129da3d3db" style="width: 100.0%; height: 100.0%;">City: Nanjing<br> Average Temperature: 1.61 C<br></div>`)[0];
-            popup_fc3077df76ae411294e1a78c7ab64ad2.setContent(html_13dfbe9c552843469eefcb129da3d3db);
+//             var html_13dfbe9c552843469eefcb129da3d3db = $(`<div id="html_13dfbe9c552843469eefcb129da3d3db" style="width: 100.0%; height: 100.0%;">City: Nanjing<br> Average Temperature: 1.61 C<br></div>`)[0];
+//             popup_fc3077df76ae411294e1a78c7ab64ad2.setContent(html_13dfbe9c552843469eefcb129da3d3db);
         
 
-        circle_marker_dedf0c2fdcf043ac8c4151ccbb9b3023.bindPopup(popup_fc3077df76ae411294e1a78c7ab64ad2)
-        ;
+//         circle_marker_dedf0c2fdcf043ac8c4151ccbb9b3023.bindPopup(popup_fc3077df76ae411294e1a78c7ab64ad2)
+//         ;
 
         
     
     
-            var circle_marker_824ea39758194f1ca650950d045e1531 = L.circleMarker(
-                [28.13, 77.27],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_824ea39758194f1ca650950d045e1531 = L.circleMarker(
+//                 [28.13, 77.27],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_edd3ff6a3ab54566beeba0a20e2e71b0 = L.popup({"maxWidth": "100%"});
+//         var popup_edd3ff6a3ab54566beeba0a20e2e71b0 = L.popup({"maxWidth": "100%"});
 
         
-            var html_a082516aa39b4d9c9efc1064f67fc3a4 = $(`<div id="html_a082516aa39b4d9c9efc1064f67fc3a4" style="width: 100.0%; height: 100.0%;">City: New Delhi<br> Average Temperature: 15.05 C<br></div>`)[0];
-            popup_edd3ff6a3ab54566beeba0a20e2e71b0.setContent(html_a082516aa39b4d9c9efc1064f67fc3a4);
+//             var html_a082516aa39b4d9c9efc1064f67fc3a4 = $(`<div id="html_a082516aa39b4d9c9efc1064f67fc3a4" style="width: 100.0%; height: 100.0%;">City: New Delhi<br> Average Temperature: 15.05 C<br></div>`)[0];
+//             popup_edd3ff6a3ab54566beeba0a20e2e71b0.setContent(html_a082516aa39b4d9c9efc1064f67fc3a4);
         
 
-        circle_marker_824ea39758194f1ca650950d045e1531.bindPopup(popup_edd3ff6a3ab54566beeba0a20e2e71b0)
-        ;
+//         circle_marker_824ea39758194f1ca650950d045e1531.bindPopup(popup_edd3ff6a3ab54566beeba0a20e2e71b0)
+//         ;
 
         
     
     
-            var circle_marker_e6ac83a7bc6240efbd9b9298977a4a7f = L.circleMarker(
-                [40.99, -74.56],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_e6ac83a7bc6240efbd9b9298977a4a7f = L.circleMarker(
+//                 [40.99, -74.56],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_a9fa89fafab8446ca1456d89fcd79c8a = L.popup({"maxWidth": "100%"});
+//         var popup_a9fa89fafab8446ca1456d89fcd79c8a = L.popup({"maxWidth": "100%"});
 
         
-            var html_bee46552a36d4cf8a6c35591861f5292 = $(`<div id="html_bee46552a36d4cf8a6c35591861f5292" style="width: 100.0%; height: 100.0%;">City: New York<br> Average Temperature: -0.4 C<br></div>`)[0];
-            popup_a9fa89fafab8446ca1456d89fcd79c8a.setContent(html_bee46552a36d4cf8a6c35591861f5292);
+//             var html_bee46552a36d4cf8a6c35591861f5292 = $(`<div id="html_bee46552a36d4cf8a6c35591861f5292" style="width: 100.0%; height: 100.0%;">City: New York<br> Average Temperature: -0.4 C<br></div>`)[0];
+//             popup_a9fa89fafab8446ca1456d89fcd79c8a.setContent(html_bee46552a36d4cf8a6c35591861f5292);
         
 
-        circle_marker_e6ac83a7bc6240efbd9b9298977a4a7f.bindPopup(popup_a9fa89fafab8446ca1456d89fcd79c8a)
-        ;
+//         circle_marker_e6ac83a7bc6240efbd9b9298977a4a7f.bindPopup(popup_a9fa89fafab8446ca1456d89fcd79c8a)
+//         ;
 
         
     
     
-            var circle_marker_28a0f1fa589649f594caaacf0d06b3e3 = L.circleMarker(
-                [49.03, 2.45],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_28a0f1fa589649f594caaacf0d06b3e3 = L.circleMarker(
+//                 [49.03, 2.45],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_4d6682582a8d4951ad17c05e52980556 = L.popup({"maxWidth": "100%"});
+//         var popup_4d6682582a8d4951ad17c05e52980556 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e6d4a06b3ba343e4aa6419c3f9589a9f = $(`<div id="html_e6d4a06b3ba343e4aa6419c3f9589a9f" style="width: 100.0%; height: 100.0%;">City: Paris<br> Average Temperature: 6.33 C<br></div>`)[0];
-            popup_4d6682582a8d4951ad17c05e52980556.setContent(html_e6d4a06b3ba343e4aa6419c3f9589a9f);
+//             var html_e6d4a06b3ba343e4aa6419c3f9589a9f = $(`<div id="html_e6d4a06b3ba343e4aa6419c3f9589a9f" style="width: 100.0%; height: 100.0%;">City: Paris<br> Average Temperature: 6.33 C<br></div>`)[0];
+//             popup_4d6682582a8d4951ad17c05e52980556.setContent(html_e6d4a06b3ba343e4aa6419c3f9589a9f);
         
 
-        circle_marker_28a0f1fa589649f594caaacf0d06b3e3.bindPopup(popup_4d6682582a8d4951ad17c05e52980556)
-        ;
+//         circle_marker_28a0f1fa589649f594caaacf0d06b3e3.bindPopup(popup_4d6682582a8d4951ad17c05e52980556)
+//         ;
 
         
     
     
-            var circle_marker_aef09c7c742e42da85542ee325c94187 = L.circleMarker(
-                [39.38, 116.53],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_aef09c7c742e42da85542ee325c94187 = L.circleMarker(
+//                 [39.38, 116.53],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_001fecc3cdac46668e3d0d0c20034164 = L.popup({"maxWidth": "100%"});
+//         var popup_001fecc3cdac46668e3d0d0c20034164 = L.popup({"maxWidth": "100%"});
 
         
-            var html_3a1c02422457409aa6fcdf08fadd84d1 = $(`<div id="html_3a1c02422457409aa6fcdf08fadd84d1" style="width: 100.0%; height: 100.0%;">City: Peking<br> Average Temperature: -4.36 C<br></div>`)[0];
-            popup_001fecc3cdac46668e3d0d0c20034164.setContent(html_3a1c02422457409aa6fcdf08fadd84d1);
+//             var html_3a1c02422457409aa6fcdf08fadd84d1 = $(`<div id="html_3a1c02422457409aa6fcdf08fadd84d1" style="width: 100.0%; height: 100.0%;">City: Peking<br> Average Temperature: -4.36 C<br></div>`)[0];
+//             popup_001fecc3cdac46668e3d0d0c20034164.setContent(html_3a1c02422457409aa6fcdf08fadd84d1);
         
 
-        circle_marker_aef09c7c742e42da85542ee325c94187.bindPopup(popup_001fecc3cdac46668e3d0d0c20034164)
-        ;
+//         circle_marker_aef09c7c742e42da85542ee325c94187.bindPopup(popup_001fecc3cdac46668e3d0d0c20034164)
+//         ;
 
         
     
     
-            var circle_marker_595e6a40b43e43d3b49dd494e3e0e1c0 = L.circleMarker(
-                [18.48, 74.37],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_595e6a40b43e43d3b49dd494e3e0e1c0 = L.circleMarker(
+//                 [18.48, 74.37],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_727d308195cc45e087c5404c4600adbd = L.popup({"maxWidth": "100%"});
+//         var popup_727d308195cc45e087c5404c4600adbd = L.popup({"maxWidth": "100%"});
 
         
-            var html_9a294a3bce6c473f80343df767d2002c = $(`<div id="html_9a294a3bce6c473f80343df767d2002c" style="width: 100.0%; height: 100.0%;">City: Pune<br> Average Temperature: 21.27 C<br></div>`)[0];
-            popup_727d308195cc45e087c5404c4600adbd.setContent(html_9a294a3bce6c473f80343df767d2002c);
+//             var html_9a294a3bce6c473f80343df767d2002c = $(`<div id="html_9a294a3bce6c473f80343df767d2002c" style="width: 100.0%; height: 100.0%;">City: Pune<br> Average Temperature: 21.27 C<br></div>`)[0];
+//             popup_727d308195cc45e087c5404c4600adbd.setContent(html_9a294a3bce6c473f80343df767d2002c);
         
 
-        circle_marker_595e6a40b43e43d3b49dd494e3e0e1c0.bindPopup(popup_727d308195cc45e087c5404c4600adbd)
-        ;
+//         circle_marker_595e6a40b43e43d3b49dd494e3e0e1c0.bindPopup(popup_727d308195cc45e087c5404c4600adbd)
+//         ;
 
         
     
     
-            var circle_marker_a16afa7e74de4243a55c360cc8a44f76 = L.circleMarker(
-                [16.87, 95.44],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_a16afa7e74de4243a55c360cc8a44f76 = L.circleMarker(
+//                 [16.87, 95.44],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_ccdd889476da49a2b9b05c40e11e3357 = L.popup({"maxWidth": "100%"});
+//         var popup_ccdd889476da49a2b9b05c40e11e3357 = L.popup({"maxWidth": "100%"});
 
         
-            var html_08af6a3b581d4554b3f49c8fa2558175 = $(`<div id="html_08af6a3b581d4554b3f49c8fa2558175" style="width: 100.0%; height: 100.0%;">City: Rangoon<br> Average Temperature: 23.15 C<br></div>`)[0];
-            popup_ccdd889476da49a2b9b05c40e11e3357.setContent(html_08af6a3b581d4554b3f49c8fa2558175);
+//             var html_08af6a3b581d4554b3f49c8fa2558175 = $(`<div id="html_08af6a3b581d4554b3f49c8fa2558175" style="width: 100.0%; height: 100.0%;">City: Rangoon<br> Average Temperature: 23.15 C<br></div>`)[0];
+//             popup_ccdd889476da49a2b9b05c40e11e3357.setContent(html_08af6a3b581d4554b3f49c8fa2558175);
         
 
-        circle_marker_a16afa7e74de4243a55c360cc8a44f76.bindPopup(popup_ccdd889476da49a2b9b05c40e11e3357)
-        ;
+//         circle_marker_a16afa7e74de4243a55c360cc8a44f76.bindPopup(popup_ccdd889476da49a2b9b05c40e11e3357)
+//         ;
 
         
     
     
-            var circle_marker_6884744ac1f94cd9aff42f9f914b401e = L.circleMarker(
-                [-23.31, -42.82],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_6884744ac1f94cd9aff42f9f914b401e = L.circleMarker(
+//                 [-23.31, -42.82],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_6c4695e2a5724f29a6f1c6d916326ca2 = L.popup({"maxWidth": "100%"});
+//         var popup_6c4695e2a5724f29a6f1c6d916326ca2 = L.popup({"maxWidth": "100%"});
 
         
-            var html_3a7ddc5cd32c4a68bf3e80c490199946 = $(`<div id="html_3a7ddc5cd32c4a68bf3e80c490199946" style="width: 100.0%; height: 100.0%;">City: Rio De Janeiro<br> Average Temperature: 26.52 C<br></div>`)[0];
-            popup_6c4695e2a5724f29a6f1c6d916326ca2.setContent(html_3a7ddc5cd32c4a68bf3e80c490199946);
+//             var html_3a7ddc5cd32c4a68bf3e80c490199946 = $(`<div id="html_3a7ddc5cd32c4a68bf3e80c490199946" style="width: 100.0%; height: 100.0%;">City: Rio De Janeiro<br> Average Temperature: 26.52 C<br></div>`)[0];
+//             popup_6c4695e2a5724f29a6f1c6d916326ca2.setContent(html_3a7ddc5cd32c4a68bf3e80c490199946);
         
 
-        circle_marker_6884744ac1f94cd9aff42f9f914b401e.bindPopup(popup_6c4695e2a5724f29a6f1c6d916326ca2)
-        ;
+//         circle_marker_6884744ac1f94cd9aff42f9f914b401e.bindPopup(popup_6c4695e2a5724f29a6f1c6d916326ca2)
+//         ;
 
         
     
     
-            var circle_marker_0437d99b3bc5416288d60c3fb4e0b41c = L.circleMarker(
-                [24.92, 46.11],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_0437d99b3bc5416288d60c3fb4e0b41c = L.circleMarker(
+//                 [24.92, 46.11],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_3066a4bf97e54abeb02124de9e15f0ba = L.popup({"maxWidth": "100%"});
+//         var popup_3066a4bf97e54abeb02124de9e15f0ba = L.popup({"maxWidth": "100%"});
 
         
-            var html_ac0c70d69c534e9c96fbb8450f7d1f69 = $(`<div id="html_ac0c70d69c534e9c96fbb8450f7d1f69" style="width: 100.0%; height: 100.0%;">City: Riyadh<br> Average Temperature: 12.32 C<br></div>`)[0];
-            popup_3066a4bf97e54abeb02124de9e15f0ba.setContent(html_ac0c70d69c534e9c96fbb8450f7d1f69);
+//             var html_ac0c70d69c534e9c96fbb8450f7d1f69 = $(`<div id="html_ac0c70d69c534e9c96fbb8450f7d1f69" style="width: 100.0%; height: 100.0%;">City: Riyadh<br> Average Temperature: 12.32 C<br></div>`)[0];
+//             popup_3066a4bf97e54abeb02124de9e15f0ba.setContent(html_ac0c70d69c534e9c96fbb8450f7d1f69);
         
 
-        circle_marker_0437d99b3bc5416288d60c3fb4e0b41c.bindPopup(popup_3066a4bf97e54abeb02124de9e15f0ba)
-        ;
+//         circle_marker_0437d99b3bc5416288d60c3fb4e0b41c.bindPopup(popup_3066a4bf97e54abeb02124de9e15f0ba)
+//         ;
 
         
     
     
-            var circle_marker_7df48aabc1ff47da92e404fabe61fb1a = L.circleMarker(
-                [42.59, 13.09],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_7df48aabc1ff47da92e404fabe61fb1a = L.circleMarker(
+//                 [42.59, 13.09],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_38037546d3c245ffbebb451721beb8a8 = L.popup({"maxWidth": "100%"});
+//         var popup_38037546d3c245ffbebb451721beb8a8 = L.popup({"maxWidth": "100%"});
 
         
-            var html_591db9336ac04682bb7c689934a2382e = $(`<div id="html_591db9336ac04682bb7c689934a2382e" style="width: 100.0%; height: 100.0%;">City: Rome<br> Average Temperature: 3.32 C<br></div>`)[0];
-            popup_38037546d3c245ffbebb451721beb8a8.setContent(html_591db9336ac04682bb7c689934a2382e);
+//             var html_591db9336ac04682bb7c689934a2382e = $(`<div id="html_591db9336ac04682bb7c689934a2382e" style="width: 100.0%; height: 100.0%;">City: Rome<br> Average Temperature: 3.32 C<br></div>`)[0];
+//             popup_38037546d3c245ffbebb451721beb8a8.setContent(html_591db9336ac04682bb7c689934a2382e);
         
 
-        circle_marker_7df48aabc1ff47da92e404fabe61fb1a.bindPopup(popup_38037546d3c245ffbebb451721beb8a8)
-        ;
+//         circle_marker_7df48aabc1ff47da92e404fabe61fb1a.bindPopup(popup_38037546d3c245ffbebb451721beb8a8)
+//         ;
 
         
     
     
-            var circle_marker_de192d8615d8415fbe511a5e848a7e27 = L.circleMarker(
-                [-23.31, -46.31],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_de192d8615d8415fbe511a5e848a7e27 = L.circleMarker(
+//                 [-23.31, -46.31],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_eecd81054eb24dd08263bcdd8e4fe078 = L.popup({"maxWidth": "100%"});
+//         var popup_eecd81054eb24dd08263bcdd8e4fe078 = L.popup({"maxWidth": "100%"});
 
         
-            var html_486af42810db40b18b0fcf62b5967558 = $(`<div id="html_486af42810db40b18b0fcf62b5967558" style="width: 100.0%; height: 100.0%;">City: São Paulo<br> Average Temperature: 23.54 C<br></div>`)[0];
-            popup_eecd81054eb24dd08263bcdd8e4fe078.setContent(html_486af42810db40b18b0fcf62b5967558);
+//             var html_486af42810db40b18b0fcf62b5967558 = $(`<div id="html_486af42810db40b18b0fcf62b5967558" style="width: 100.0%; height: 100.0%;">City: São Paulo<br> Average Temperature: 23.54 C<br></div>`)[0];
+//             popup_eecd81054eb24dd08263bcdd8e4fe078.setContent(html_486af42810db40b18b0fcf62b5967558);
         
 
-        circle_marker_de192d8615d8415fbe511a5e848a7e27.bindPopup(popup_eecd81054eb24dd08263bcdd8e4fe078)
-        ;
+//         circle_marker_de192d8615d8415fbe511a5e848a7e27.bindPopup(popup_eecd81054eb24dd08263bcdd8e4fe078)
+//         ;
 
         
     
     
-            var circle_marker_09ac2b8d60d1480f8e10110645469588 = L.circleMarker(
-                [60.27, 29.19],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_09ac2b8d60d1480f8e10110645469588 = L.circleMarker(
+//                 [60.27, 29.19],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_fe8bb7547df544f2b6f2b67052708deb = L.popup({"maxWidth": "100%"});
+//         var popup_fe8bb7547df544f2b6f2b67052708deb = L.popup({"maxWidth": "100%"});
 
         
-            var html_0cdb84767e324104ab28dbefdc6f2800 = $(`<div id="html_0cdb84767e324104ab28dbefdc6f2800" style="width: 100.0%; height: 100.0%;">City: Saint Petersburg<br> Average Temperature: -2.43 C<br></div>`)[0];
-            popup_fe8bb7547df544f2b6f2b67052708deb.setContent(html_0cdb84767e324104ab28dbefdc6f2800);
+//             var html_0cdb84767e324104ab28dbefdc6f2800 = $(`<div id="html_0cdb84767e324104ab28dbefdc6f2800" style="width: 100.0%; height: 100.0%;">City: Saint Petersburg<br> Average Temperature: -2.43 C<br></div>`)[0];
+//             popup_fe8bb7547df544f2b6f2b67052708deb.setContent(html_0cdb84767e324104ab28dbefdc6f2800);
         
 
-        circle_marker_09ac2b8d60d1480f8e10110645469588.bindPopup(popup_fe8bb7547df544f2b6f2b67052708deb)
-        ;
+//         circle_marker_09ac2b8d60d1480f8e10110645469588.bindPopup(popup_fe8bb7547df544f2b6f2b67052708deb)
+//         ;
 
         
     
     
-            var circle_marker_360937d24cc34c53915a2a299d04021a = L.circleMarker(
-                [-13.66, -38.81],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_360937d24cc34c53915a2a299d04021a = L.circleMarker(
+//                 [-13.66, -38.81],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_c8be76771c5b4a8e98234ec7b8bdfc7d = L.popup({"maxWidth": "100%"});
+//         var popup_c8be76771c5b4a8e98234ec7b8bdfc7d = L.popup({"maxWidth": "100%"});
 
         
-            var html_b217d727f1d14bb695e8d3e801d5dc9b = $(`<div id="html_b217d727f1d14bb695e8d3e801d5dc9b" style="width: 100.0%; height: 100.0%;">City: Salvador<br> Average Temperature: 26.14 C<br></div>`)[0];
-            popup_c8be76771c5b4a8e98234ec7b8bdfc7d.setContent(html_b217d727f1d14bb695e8d3e801d5dc9b);
+//             var html_b217d727f1d14bb695e8d3e801d5dc9b = $(`<div id="html_b217d727f1d14bb695e8d3e801d5dc9b" style="width: 100.0%; height: 100.0%;">City: Salvador<br> Average Temperature: 26.14 C<br></div>`)[0];
+//             popup_c8be76771c5b4a8e98234ec7b8bdfc7d.setContent(html_b217d727f1d14bb695e8d3e801d5dc9b);
         
 
-        circle_marker_360937d24cc34c53915a2a299d04021a.bindPopup(popup_c8be76771c5b4a8e98234ec7b8bdfc7d)
-        ;
+//         circle_marker_360937d24cc34c53915a2a299d04021a.bindPopup(popup_c8be76771c5b4a8e98234ec7b8bdfc7d)
+//         ;
 
         
     
     
-            var circle_marker_4ced4165281e4696b79e10e177a9ddec = L.circleMarker(
-                [-32.95, -69.89],
-                {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_4ced4165281e4696b79e10e177a9ddec = L.circleMarker(
+//                 [-32.95, -69.89],
+//                 {"bubblingMouseEvents": true, "color": "#fddbc7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fddbc7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_b8cb65d1ef824d4e847fc7cd04cc6037 = L.popup({"maxWidth": "100%"});
+//         var popup_b8cb65d1ef824d4e847fc7cd04cc6037 = L.popup({"maxWidth": "100%"});
 
         
-            var html_fe50d7997bab4dd7893c87633566d5d7 = $(`<div id="html_fe50d7997bab4dd7893c87633566d5d7" style="width: 100.0%; height: 100.0%;">City: Santiago<br> Average Temperature: 13.1 C<br></div>`)[0];
-            popup_b8cb65d1ef824d4e847fc7cd04cc6037.setContent(html_fe50d7997bab4dd7893c87633566d5d7);
+//             var html_fe50d7997bab4dd7893c87633566d5d7 = $(`<div id="html_fe50d7997bab4dd7893c87633566d5d7" style="width: 100.0%; height: 100.0%;">City: Santiago<br> Average Temperature: 13.1 C<br></div>`)[0];
+//             popup_b8cb65d1ef824d4e847fc7cd04cc6037.setContent(html_fe50d7997bab4dd7893c87633566d5d7);
         
 
-        circle_marker_4ced4165281e4696b79e10e177a9ddec.bindPopup(popup_b8cb65d1ef824d4e847fc7cd04cc6037)
-        ;
+//         circle_marker_4ced4165281e4696b79e10e177a9ddec.bindPopup(popup_b8cb65d1ef824d4e847fc7cd04cc6037)
+//         ;
 
         
     
     
-            var circle_marker_e8ca32c5711845a29ae2846c40d0a026 = L.circleMarker(
-                [18.48, -69.3],
-                {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_e8ca32c5711845a29ae2846c40d0a026 = L.circleMarker(
+//                 [18.48, -69.3],
+//                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_0f5bd1152104484089be7a30c53a5b96 = L.popup({"maxWidth": "100%"});
+//         var popup_0f5bd1152104484089be7a30c53a5b96 = L.popup({"maxWidth": "100%"});
 
         
-            var html_7341819e970e431e92900fcf1c24a848 = $(`<div id="html_7341819e970e431e92900fcf1c24a848" style="width: 100.0%; height: 100.0%;">City: Santo Domingo<br> Average Temperature: 24.36 C<br></div>`)[0];
-            popup_0f5bd1152104484089be7a30c53a5b96.setContent(html_7341819e970e431e92900fcf1c24a848);
+//             var html_7341819e970e431e92900fcf1c24a848 = $(`<div id="html_7341819e970e431e92900fcf1c24a848" style="width: 100.0%; height: 100.0%;">City: Santo Domingo<br> Average Temperature: 24.36 C<br></div>`)[0];
+//             popup_0f5bd1152104484089be7a30c53a5b96.setContent(html_7341819e970e431e92900fcf1c24a848);
         
 
-        circle_marker_e8ca32c5711845a29ae2846c40d0a026.bindPopup(popup_0f5bd1152104484089be7a30c53a5b96)
-        ;
+//         circle_marker_e8ca32c5711845a29ae2846c40d0a026.bindPopup(popup_0f5bd1152104484089be7a30c53a5b96)
+//         ;
 
         
     
     
-            var circle_marker_198fa014a5e54c7d8c5b163497cbdb44 = L.circleMarker(
-                [37.78, 126.1],
-                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-            ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
+//             var circle_marker_198fa014a5e54c7d8c5b163497cbdb44 = L.circleMarker(
+//                 [37.78, 126.1],
+//                 {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+//             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
         
     
-        var popup_d745ae5862b14ed3a20dab8506ed5005 = L.popup({"maxWidth": "100%"});
+//         var popup_d745ae5862b14ed3a20dab8506ed5005 = L.popup({"maxWidth": "100%"});
 
         
-            var html_0c56c6d91fc14bb7be7167ff83b868db = $(`<div id="html_0c56c6d91fc14bb7be7167ff83b868db" style="width: 100.0%; height: 100.0%;">City: Seoul<br> Average Temperature: -2.56 C<br></div>`)[0];
-            popup_d745ae5862b14ed3a20dab8506ed5005.setContent(html_0c56c6d91fc14bb7be7167ff83b868db);
+//             var html_0c56c6d91fc14bb7be7167ff83b868db = $(`<div id="html_0c56c6d91fc14bb7be7167ff83b868db" style="width: 100.0%; height: 100.0%;">City: Seoul<br> Average Temperature: -2.56 C<br></div>`)[0];
+//             popup_d745ae5862b14ed3a20dab8506ed5005.setContent(html_0c56c6d91fc14bb7be7167ff83b868db);
         
 
-        circle_marker_198fa014a5e54c7d8c5b163497cbdb44.bindPopup(popup_d745ae5862b14ed3a20dab8506ed5005)
-        ;
+//         circle_marker_198fa014a5e54c7d8c5b163497cbdb44.bindPopup(popup_d745ae5862b14ed3a20dab8506ed5005)
+//         ;
 
         
     
 </script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<script src="../../dist/bundle.js"></script>
