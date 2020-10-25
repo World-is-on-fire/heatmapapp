@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <head>    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
@@ -19,29 +19,28 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_ae20d233dbb4489e9ffd45e1e9a00b94 {
+                #mapPast {
                     position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
+                    width: 50.0%;
+                    float: left;
+                    height: 90.0%
+                }
+                #mapPresent {
+                    position: relative;
+                    width: 50.0%;
+                    float: right;
+                    height: 90.0%
                 }
             </style>
         
 </head>
 <body>    
-            <div id="past">
-                <div class="folium-map" id="mapPast" ></div>
-                <input type="text"></input>
-            </div>
-            <div id="present">
-                <div class="folium-map" id="mapPresent" ></div>
-                <input type="text"></input>
-            </div>
-            <button type="button">Search</button>
+        
+            <div class="folium-map" id="mapPast" ></div>
+            <div class="folium-map" id="mapPresent" ></div>
         
 </body>
-<script>    
+<script>   
     
             // var map_ae20d233dbb4489e9ffd45e1e9a00b94 = L.map(
             //     "map_ae20d233dbb4489e9ffd45e1e9a00b94",

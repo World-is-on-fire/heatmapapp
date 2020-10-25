@@ -1,9 +1,42 @@
-window.onload = init();
+window.onload = init()
 
 function init(){
+    var mapPast = L.map(
+        "mapPast",
+        {
+            center: [31.771421, -40.485469],
+            crs: L.CRS.EPSG3857,
+            zoom: 2,
+            zoomControl: true,
+            preferCanvas: true,
+        }
+    );
+
+    var mapPresent = L.map(
+        "mapPresent",
+        {
+            center: [31.771421, -40.485469],
+            crs: L.CRS.EPSG3857,
+            zoom: 2,
+            zoomControl: true,
+            preferCanvas: true,
+        }
+    );
+
+    var tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+    ).addTo(mapPast);
+
+    var tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+    ).addTo(mapPresent);
+
+    
     var data = [
-        {"longitude": 5.63, "latitude": -3.23, "temp": "1"},
-        {"longitude": 8.84, "latitude": 38.11, "temp": "2"}
+        {"longitude": 5.63, "latitude": -3.23, "temp": "8"},
+        {"longitude": 8.84, "latitude": 38.11, "temp": "9"}
     ];
 
     //(data + 40)/10 + 1
@@ -17,42 +50,21 @@ function init(){
         "5": "#fddbc7",
         "6": "#f4a582",
         "7": "#d6604d",
-        "8": "b2182b",
+        "8": "#b2182b",
         "9": "#2166ac"
     }
-
-    L_NO_TOUCH = false;
-    L_DISABLE_3D = false;
-
-    var mapPast = L.map(
-        "mapPast",
-        {
-            center: [31.771421, -40.485469]
-        }
-    );
-
-    var mapPresent = L.map(
-        "mapPresent",
-        {
-            center: [31.771421, -40.485469]
-        }
-    );
 
     for (const point of data){
         L.circleMarker(
                 [point["longitude"], point["latitude"]],
-                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
           ).addTo(mapPast);
     }
 
     for (const point of data){
         L.circleMarker(
                 [point["longitude"], point["latitude"]],
-                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
           ).addTo(mapPresent);
     }
 }
-//var circle_marker_19ead25987eb4f87b149203f758badd8 = L.circleMarker(
-    //                 [5.63, -3.23],
-    //                 {"bubblingMouseEvents": true, "color": "#f4a582", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4a582", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
-    //             ).addTo(map_ae20d233dbb4489e9ffd45e1e9a00b94);
