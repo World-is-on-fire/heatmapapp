@@ -1,5 +1,7 @@
 # Databricks notebook source
 from pyspark.sql.functions import col, date_format, avg, udf
+from pyspark.sql import Window
+from pyspark.sql.functions import row_number, desc, floor
 
 # File location and type
 file_location = "/FileStore/tables/GlobalLandTemperaturesByCity.csv"
@@ -20,7 +22,7 @@ df = spark.read.format(file_type) \
 # COMMAND ----------
 
 # DBTITLE 1,Select columns
-heatMapDf = df.select(["dt", "AverageTemperature", "City", "Latitude", "Longitude"])
+heatMapDf = df.select(["dt", "AverageTemperature", "Latitude", "Longitude"])
 
 # COMMAND ----------
 
@@ -30,70 +32,53 @@ heatMapDfWithoutNull=heatMapDf.na.fill(0,"AverageTemperature")
 # COMMAND ----------
 
 # DBTITLE 1,Reformat date
-annualHeatMapDf = heatMapDfWithoutNull.select("City", "Latitude", "Longitude", date_format(col("dt"), "yyyy").alias("year"), "AverageTemperature")
-
-# COMMAND ----------
-
-annualHeatMapDf = annualHeatMapDf.drop("City")
+annualHeatMapDf = heatMapDfWithoutNull.select("Latitude", "Longitude", date_format(col("dt"), "yyyy").alias("year"), "AverageTemperature")
 
 # COMMAND ----------
 
 # DBTITLE 1,Group by city and year
-finalDf = annualHeatMapDf.groupBy("year", "Longitude", "Latitude").agg({"AverageTemperature": "avg"})
+annualHeatMapDf = annualHeatMapDf.groupBy("year", "Longitude", "Latitude").agg({"AverageTemperature": "avg"})
 
 # COMMAND ----------
 
-# DBTITLE 1,Get the 10 hottest city
-from pyspark.sql.types import StructType, StructField, StringType
-
-data_schema = StructType([StructField("year", StringType(), True), StructField("Longitude", StringType(), True), StructField("Latitude", StringType(), True), StructField("avg(AverageTemperature)", StringType(), True)])
-
-@udf 
-def getHottestCities(pdf):
-  return pdf.sort_values('avg(AverageTemperature)',ascending=False,inplace=True).head(10)
+annualHeatMapDf = annualHeatMapDf.withColumnRenamed("avg(AverageTemperature)", "temperature")
 
 # COMMAND ----------
 
-#finalDf = finalDf.groupBy("year", "City", "Longitude", "Latitude").applyInPandas(getHottestCities, schema=data_schema)
+# DBTITLE 1,Get the 20 hottest cities
+windowSpec = Window.partitionBy("year").orderBy(desc("temperature"))
+hottestCitiesDf = annualHeatMapDf.withColumn("row_number",row_number().over(windowSpec))
+hottestCitiesDf = hottestCitiesDf.where(col("row_number")<=20)
+hottestCitiesDf = hottestCitiesDf.drop("row_number")
 
 # COMMAND ----------
 
-# DBTITLE 1,Rename column
-finalDf = finalDf.withColumnRenamed("avg(AverageTemperature)", "temp")
-finalDf = finalDf.withColumnRenamed("Longitude", "longitude")
-finalDf = finalDf.withColumnRenamed("Latitude", "latitude")
-
-# COMMAND ----------
-
-# DBTITLE 1,Longitude latitude UDF
+# DBTITLE 1,Longitude latitude temperature UDF
 @udf 
 def longitudeConversion(longitude):
   if longitude[-1] == "E":
-    return longitude
+    return longitude[0:-1]
   else:
-    return float(longitude)*(-1)
+    return float(longitude[0:-1])*(-1)
   
 @udf 
 def latitudeConversion(latitude):
   if latitude[-1] == "N":
-    return latitude
+    return latitude[0:-1]
   else:
-    return float(latitude)*(-1)
-
-@udf
-def tempConversion(temp):
-  return math.floor((float(temp)+40)/10) + 1
+    return float(latitude[0:-1])*(-1)
 
 # COMMAND ----------
 
-# finalDf = finalDf.withColumn("Longitude", longitudeConversion("Longitude"))
-# finalDf = finalDf.withColumn("Latitude", latitudeConversion("Latitude"))
-# finalDf = finalDf.withColumn("AverageAnnualTemp", tempConversion("AverageAnnualTemp"))
+hottestCitiesDf = hottestCitiesDf.withColumn("Longitude", longitudeConversion("Longitude").alias("longitude"))\
+                                 .withColumn("Latitude", latitudeConversion("Latitude").alias("latitude"))
 
 # COMMAND ----------
 
-print(finalDf.toJSON().collect())
+array = hottestCitiesDf.toJSON().collect()
+print(hottestCitiesDf.toJSON().collect())
 
 # COMMAND ----------
 
-finalDf.write.mode("overwrite").json("C:/Users/lenovo/Desktop")
+dbutils.fs.put("dbfs:/FileStore/tables/temp.txt", "{}".format(array))
+#array.write.format("text").mode("overwrite").save("dbfs:/FileStore/tables/temp.txt")
