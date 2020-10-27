@@ -84,19 +84,33 @@ function updateMap(map, data){
         "9": "#2166ac"
     }
 
-    for (const point of data){
+    for (const point of cleanedData){
         L.circleMarker(
-                [point["longitude"], point["latitude"]],
-                {"bubblingMouseEvents": true, "color": colorMap[point["temp"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
+                [point["Longitude"], point["Latitude"]],
+                {"bubblingMouseEvents": true, "color": colorMap[point["temperature"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
           ).addTo(map);
     }
 }
 
-[
-    {"year": "2010", "longitude": "5.63N", "latitude": "3.23W", "temp": "35"},
-    {"year": "2011", "longitude": "8.84N", "latitude": "38.11E", "temp": "36"}
-]; 
-
 function dataConversion(data){
-    
+    let cleanedData = [];
+    for (const line of data){
+        let convertedTemp = tempConversion(line["temperature"]);
+        if (convertedTemp < 1){
+            convertedTemp = 1;
+        } else if (convertedTemp > 9){
+            convertedTemp = 9;
+        }
+        line["temperatue"] = convertedTemp;
+        cleanedData.push(line);
+    }
+    return cleanedData;
+}
+
+function tempConversion(temp){
+    if (temp>=0){
+        return Math.floor(temp/10) + 5;
+    } else {
+        return Math.ceil(temp/10) + 5;
+    }
 }
