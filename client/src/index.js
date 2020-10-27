@@ -73,21 +73,20 @@ function updateMap(map, data){
 
     //1: coldest, 6: hottest
     var colorMap = {
-        "1": "#f7f7f7",
-        "2": "#d1e5f0",
-        "3": "#92c5de",
-        "4": "#4393c3",
-        "5": "#fddbc7",
-        "6": "#f4a582",
-        "7": "#d6604d",
-        "8": "#b2182b",
-        "9": "#2166ac"
+        "1": "#fbf460",
+        "2": "#f6e412",
+        "3": "#f8a26a",
+        "4": "#f49132",
+        "5": "#f48d49",
+        "6": "#f47b2b",
+        "7": "#f36e51",
+        "8": "#ff0000"
     }
 
     for (const point of cleanedData){
         L.circleMarker(
                 [point["Longitude"], point["Latitude"]],
-                {"bubblingMouseEvents": true, "color": colorMap[point["temperature"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temp"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
+                {"bubblingMouseEvents": true, "color": colorMap[point["temperature"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temperature"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
           ).addTo(map);
     }
 }
@@ -99,11 +98,13 @@ function dataConversion(data){
         if (temperature<=10){
             continue;
         }
-        let convertedTemp = Math.floor(line["temperature"]/10) + 5;
-        if (convertedTemp > 9){
-            convertedTemp = 9;
+        let convertedTemp = parseInt(temperature-24);
+        if (convertedTemp < 1) {
+            convertedTemp = 1;
+        } else if (convertedTemp > 8){
+            convertedTemp = 8;
         }
-        line["temperatue"] = convertedTemp;
+        line["temperature"] = convertedTemp;
         cleanedData.push(line);
     }
     return cleanedData;
