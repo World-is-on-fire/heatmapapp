@@ -95,22 +95,16 @@ function updateMap(map, data){
 function dataConversion(data){
     let cleanedData = [];
     for (const line of data){
-        let convertedTemp = tempConversion(line["temperature"]);
-        if (convertedTemp < 1){
-            convertedTemp = 1;
-        } else if (convertedTemp > 9){
+        const temperature = line["temperature"];
+        if (temperature<=10){
+            continue;
+        }
+        let convertedTemp = Math.floor(line["temperature"]/10) + 5;
+        if (convertedTemp > 9){
             convertedTemp = 9;
         }
         line["temperatue"] = convertedTemp;
         cleanedData.push(line);
     }
     return cleanedData;
-}
-
-function tempConversion(temp){
-    if (temp>=0){
-        return Math.floor(temp/10) + 5;
-    } else {
-        return Math.ceil(temp/10) + 5;
-    }
 }
