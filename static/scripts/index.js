@@ -4,7 +4,7 @@ document.getElementById("startSearch").addEventListener("click", fetchTempDataFo
 
 document.getElementById("endSearch").addEventListener("click", fetchTempDataForEndDate);
 
-let mapPast, mapPresent;
+let mapPast, mapPresent, circleGroupPast, circleGroupPresent
 
 function fetchTempDataForStartDate(){
     //fetch date
@@ -12,7 +12,7 @@ function fetchTempDataForStartDate(){
 
     fetch(`/temp/${date}`)
     .then(response => response.json())
-    .then(data => updateMap(mapPast, data.data));
+    .then(data => updateMap(mapPast, data.data, false));
 }
 
 function fetchTempDataForEndDate(){
@@ -21,7 +21,7 @@ function fetchTempDataForEndDate(){
 
     fetch(`/temp/${date}`)
     .then(response => response.json())
-    .then(data => updateMap(mapPresent, data.data));
+    .then(data => updateMap(mapPresent, data.data, true));
 }
 
 
@@ -58,16 +58,20 @@ function init(){
         {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
     ).addTo(mapPresent);
 
+    circleGroupPast = L.featureGroup();
+    circleGroupPresent = L.featureGroup();
+
     fetch(`/temp/1900`)
     .then(response => response.json())
-    .then(data => updateMap(mapPast, data.data));
+    .then(data => updateMap(mapPast, data.data, false)
+    );
 
     fetch(`/temp/2006`)
     .then(response => response.json())
-    .then(data => updateMap(mapPresent, data.data));
+    .then(data => updateMap(mapPresent, data.data, true));
 }
 
-function updateMap(map, data){
+function updateMap(map, data, isPresent){
 
     var cleanedData = dataConversion(data);
 
@@ -83,11 +87,26 @@ function updateMap(map, data){
         "8": "#ff0000"
     }
 
+    if ((isPresent && map.hasLayer(circleGroupPresent)) || (!isPresent && map.hasLayer(circleGroupPast))){
+        isPresent && map.removeLayer(circleGroupPresent);
+        !isPresent && map.removeLayer(circleGroupPast);
+    }
+
+    let newCircleGroup = L.featureGroup();
+
     for (const point of cleanedData){
         L.circleMarker(
-                [point["Longitude"], point["Latitude"]],
+                [point["Latitude"], point["Longitude"]],
                 {"bubblingMouseEvents": true, "color": colorMap[point["temperature"]], "dashArray": null, "dashOffset": null, "fill": true, "fillColor": colorMap[point["temperature"]], "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 4}
-          ).addTo(map);
+          ).addTo(newCircleGroup);
+    }
+
+    map.addLayer(newCircleGroup);
+
+    if(isPresent){
+        circleGroupPresent = newCircleGroup;
+    } else {
+        circleGroupPast = newCircleGroup;
     }
 }
 
