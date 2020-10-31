@@ -17,7 +17,7 @@ module.exports = {
     },
     hot: true,
   },
-  entry: './client/src/index.js',
+  entry: './static/scripts/index.js',
   module: {
     rules: [
       {
