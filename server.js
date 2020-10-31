@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 // catch-all endpoint handler
 app.use((req, res) => {
-  return res.status(400).send('Page not found.');
+  return res.status(404).send('Page not found.');
 });
 
 // global error handler
