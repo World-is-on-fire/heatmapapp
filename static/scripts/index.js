@@ -1,10 +1,22 @@
+let mapPast, mapPresent, circleGroupPast, circleGroupPresent;
+
+//1: coldest, 6: hottest
+let colorMap = {
+    "1": "#fbf460",
+    "2": "#f6e412",
+    "3": "#f8a26a",
+    "4": "#f49132",
+    "5": "#f48d49",
+    "6": "#f47b2b",
+    "7": "#f36e51",
+    "8": "#ff0000"
+}
+
 window.onload = init();
 
 document.getElementById("startSearch").addEventListener("click", fetchTempDataForStartDate);
 
 document.getElementById("endSearch").addEventListener("click", fetchTempDataForEndDate);
-
-let mapPast, mapPresent, circleGroupPast, circleGroupPresent
 
 function fetchTempDataForStartDate(){
     //fetch date
@@ -48,12 +60,12 @@ function init(){
         }
     );
 
-    var tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
+    let tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
     ).addTo(mapPast);
 
-    var tile_layer_fd4cc6e7267547cea5582202737ef34c = L.tileLayer(
+    let tile_layer_fd4cc6e7267547cea5582202737ef34d = L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
     ).addTo(mapPresent);
@@ -73,19 +85,7 @@ function init(){
 
 function updateMap(map, data, isPresent){
 
-    var cleanedData = dataConversion(data);
-
-    //1: coldest, 6: hottest
-    var colorMap = {
-        "1": "#fbf460",
-        "2": "#f6e412",
-        "3": "#f8a26a",
-        "4": "#f49132",
-        "5": "#f48d49",
-        "6": "#f47b2b",
-        "7": "#f36e51",
-        "8": "#ff0000"
-    }
+    let cleanedData = dataConversion(data);
 
     if ((isPresent && map.hasLayer(circleGroupPresent)) || (!isPresent && map.hasLayer(circleGroupPast))){
         isPresent && map.removeLayer(circleGroupPresent);
@@ -110,6 +110,7 @@ function updateMap(map, data, isPresent){
     }
 }
 
+//25-29
 function dataConversion(data){
     let cleanedData = [];
     for (const line of data){
@@ -117,7 +118,7 @@ function dataConversion(data){
         if (temperature<=10){
             continue;
         }
-        let convertedTemp = parseInt(temperature-24);
+        let convertedTemp = parseInt((temperature-25)*2);
         if (convertedTemp < 1) {
             convertedTemp = 1;
         } else if (convertedTemp > 8){
