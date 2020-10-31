@@ -2,13 +2,13 @@
   "name": "heatmapapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node ./bin/www",
     "build": "webpack",
-    "dev": "nodemon server/server.js",
+    "dev": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines":{"node": "12.15.0"}, 
   "keywords": [],
   "author": "",
   "license": "ISC",
