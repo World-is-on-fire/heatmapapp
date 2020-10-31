@@ -1,4 +1,5 @@
 # The World is on Fire!
+https://the-world-is-on-fire.azurewebsites.net
 
 Compare heatmaps of two different times and see how the world is getting hotter!
 
